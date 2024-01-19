@@ -13,28 +13,6 @@
 		393F383C2B591642008CCC40 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 393F383B2B591642008CCC40 /* Preview Assets.xcassets */; };
 		393F38502B591643008CCC40 /* Event_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F384F2B591643008CCC40 /* Event_AppUITests.swift */; };
 		393F38522B591643008CCC40 /* Event_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38512B591643008CCC40 /* Event_AppUITestsLaunchTests.swift */; };
-		393F38662B591859008CCC40 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38612B591859008CCC40 /* EventViewModel.swift */; };
-		393F38672B591859008CCC40 /* AdminViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38622B591859008CCC40 /* AdminViewModel.swift */; };
-		393F38682B591859008CCC40 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38632B591859008CCC40 /* UserViewModel.swift */; };
-		393F38692B591859008CCC40 /* TutorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38642B591859008CCC40 /* TutorViewModel.swift */; };
-		393F386A2B591859008CCC40 /* UnitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38652B591859008CCC40 /* UnitViewModel.swift */; };
-		393F38792B59189B008CCC40 /* SingleUnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F386C2B59189B008CCC40 /* SingleUnitModel.swift */; };
-		393F387A2B59189B008CCC40 /* UserPopulateEventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F386D2B59189B008CCC40 /* UserPopulateEventListModel.swift */; };
-		393F387B2B59189B008CCC40 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F386E2B59189B008CCC40 /* UserModel.swift */; };
-		393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F386F2B59189B008CCC40 /* UserPopulateModel.swift */; };
-		393F387D2B59189B008CCC40 /* TutorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38702B59189B008CCC40 /* TutorModel.swift */; };
-		393F387E2B59189B008CCC40 /* AdminModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38712B59189B008CCC40 /* AdminModel.swift */; };
-		393F387F2B59189B008CCC40 /* AdminGetOneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38722B59189B008CCC40 /* AdminGetOneModel.swift */; };
-		393F38802B59189B008CCC40 /* SingleUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38732B59189B008CCC40 /* SingleUserModel.swift */; };
-		393F38812B59189B008CCC40 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38742B59189B008CCC40 /* EventModel.swift */; };
-		393F38822B59189B008CCC40 /* UnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38752B59189B008CCC40 /* UnitModel.swift */; };
-		393F38832B59189B008CCC40 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38762B59189B008CCC40 /* Constant.swift */; };
-		393F38842B59189B008CCC40 /* UserPopulateUnitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38772B59189B008CCC40 /* UserPopulateUnitModel.swift */; };
-		393F38852B59189B008CCC40 /* Encode + Decode Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F38782B59189B008CCC40 /* Encode + Decode Helper.swift */; };
-		393F388D2B591933008CCC40 /* allUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 393F388C2B591933008CCC40 /* allUser.json */; };
-		393F38902B591946008CCC40 /* EventModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388E2B591945008CCC40 /* EventModelTest.swift */; };
-		393F38912B591946008CCC40 /* UserModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388F2B591946008CCC40 /* UserModelTest.swift */; };
-		393F38942B59196D008CCC40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 393F38932B59196D008CCC40 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,27 +42,7 @@
 		393F384B2B591643008CCC40 /* Event AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		393F384F2B591643008CCC40 /* Event_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_AppUITests.swift; sourceTree = "<group>"; };
 		393F38512B591643008CCC40 /* Event_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		393F38612B591859008CCC40 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
-		393F38622B591859008CCC40 /* AdminViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewModel.swift; sourceTree = "<group>"; };
-		393F38632B591859008CCC40 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		393F38642B591859008CCC40 /* TutorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorViewModel.swift; sourceTree = "<group>"; };
-		393F38652B591859008CCC40 /* UnitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitViewModel.swift; sourceTree = "<group>"; };
-		393F386C2B59189B008CCC40 /* SingleUnitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleUnitModel.swift; sourceTree = "<group>"; };
-		393F386D2B59189B008CCC40 /* UserPopulateEventListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPopulateEventListModel.swift; sourceTree = "<group>"; };
-		393F386E2B59189B008CCC40 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		393F386F2B59189B008CCC40 /* UserPopulateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPopulateModel.swift; sourceTree = "<group>"; };
-		393F38702B59189B008CCC40 /* TutorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorModel.swift; sourceTree = "<group>"; };
-		393F38712B59189B008CCC40 /* AdminModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminModel.swift; sourceTree = "<group>"; };
-		393F38722B59189B008CCC40 /* AdminGetOneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminGetOneModel.swift; sourceTree = "<group>"; };
-		393F38732B59189B008CCC40 /* SingleUserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleUserModel.swift; sourceTree = "<group>"; };
-		393F38742B59189B008CCC40 /* EventModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
-		393F38752B59189B008CCC40 /* UnitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitModel.swift; sourceTree = "<group>"; };
-		393F38762B59189B008CCC40 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		393F38772B59189B008CCC40 /* UserPopulateUnitModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserPopulateUnitModel.swift; sourceTree = "<group>"; };
-		393F38782B59189B008CCC40 /* Encode + Decode Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Encode + Decode Helper.swift"; sourceTree = "<group>"; };
-		393F388C2B591933008CCC40 /* allUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allUser.json; sourceTree = "<group>"; };
-		393F388E2B591945008CCC40 /* EventModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModelTest.swift; sourceTree = "<group>"; };
-		393F388F2B591946008CCC40 /* UserModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTest.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +74,7 @@
 		393F38282B591641008CCC40 = {
 			isa = PBXGroup;
 			children = (
+				B702033E2B59233500B721AA /* HomeUI */,
 				393F38332B591641008CCC40 /* Event App */,
 				393F38442B591643008CCC40 /* Event AppTests */,
 				393F388E2B591945008CCC40 /* EventModelTest.swift */,
@@ -173,84 +132,7 @@
 			path = "Event AppUITests";
 			sourceTree = "<group>";
 		};
-		393F38602B591838008CCC40 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				393F38622B591859008CCC40 /* AdminViewModel.swift */,
-				393F38612B591859008CCC40 /* EventViewModel.swift */,
-				393F38642B591859008CCC40 /* TutorViewModel.swift */,
-				393F38652B591859008CCC40 /* UnitViewModel.swift */,
-				393F38632B591859008CCC40 /* UserViewModel.swift */,
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		393F386B2B591865008CCC40 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				393F388A2B5918BD008CCC40 /* User */,
-				393F38892B5918B7008CCC40 /* Admin */,
-				393F38882B5918AE008CCC40 /* Constant */,
-				393F38872B5918A8008CCC40 /* Unit */,
-				393F38862B5918A1008CCC40 /* Event */,
-				393F38782B59189B008CCC40 /* Encode + Decode Helper.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		393F38862B5918A1008CCC40 /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				393F38742B59189B008CCC40 /* EventModel.swift */,
-			);
-			path = Event;
-			sourceTree = "<group>";
-		};
-		393F38872B5918A8008CCC40 /* Unit */ = {
-			isa = PBXGroup;
-			children = (
-				393F38752B59189B008CCC40 /* UnitModel.swift */,
-				393F386C2B59189B008CCC40 /* SingleUnitModel.swift */,
-			);
-			path = Unit;
-			sourceTree = "<group>";
-		};
-		393F38882B5918AE008CCC40 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-				393F38762B59189B008CCC40 /* Constant.swift */,
-			);
-			path = Constant;
-			sourceTree = "<group>";
-		};
-		393F38892B5918B7008CCC40 /* Admin */ = {
-			isa = PBXGroup;
-			children = (
-				393F38722B59189B008CCC40 /* AdminGetOneModel.swift */,
-				393F38712B59189B008CCC40 /* AdminModel.swift */,
-			);
-			path = Admin;
-			sourceTree = "<group>";
-		};
-		393F388A2B5918BD008CCC40 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				393F38732B59189B008CCC40 /* SingleUserModel.swift */,
-				393F38702B59189B008CCC40 /* TutorModel.swift */,
-				393F386E2B59189B008CCC40 /* UserModel.swift */,
-				393F386D2B59189B008CCC40 /* UserPopulateEventListModel.swift */,
-				393F386F2B59189B008CCC40 /* UserPopulateModel.swift */,
-				393F38772B59189B008CCC40 /* UserPopulateUnitModel.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		393F388B2B591928008CCC40 /* Json */ = {
-			isa = PBXGroup;
-			children = (
-				393F388C2B591933008CCC40 /* allUser.json */,
-			);
-			path = Json;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,26 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				393F38852B59189B008CCC40 /* Encode + Decode Helper.swift in Sources */,
-				393F38672B591859008CCC40 /* AdminViewModel.swift in Sources */,
-				393F38372B591641008CCC40 /* ContentView.swift in Sources */,
-				393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */,
-				393F38662B591859008CCC40 /* EventViewModel.swift in Sources */,
-				393F387A2B59189B008CCC40 /* UserPopulateEventListModel.swift in Sources */,
-				393F38802B59189B008CCC40 /* SingleUserModel.swift in Sources */,
-				393F38822B59189B008CCC40 /* UnitModel.swift in Sources */,
-				393F38792B59189B008CCC40 /* SingleUnitModel.swift in Sources */,
-				393F387D2B59189B008CCC40 /* TutorModel.swift in Sources */,
-				393F387E2B59189B008CCC40 /* AdminModel.swift in Sources */,
-				393F38692B591859008CCC40 /* TutorViewModel.swift in Sources */,
-				393F38832B59189B008CCC40 /* Constant.swift in Sources */,
-				393F387F2B59189B008CCC40 /* AdminGetOneModel.swift in Sources */,
-				393F386A2B591859008CCC40 /* UnitViewModel.swift in Sources */,
-				393F38682B591859008CCC40 /* UserViewModel.swift in Sources */,
-				393F387B2B59189B008CCC40 /* UserModel.swift in Sources */,
-				393F38842B59189B008CCC40 /* UserPopulateUnitModel.swift in Sources */,
-				393F38812B59189B008CCC40 /* EventModel.swift in Sources */,
 				393F38352B591641008CCC40 /* Event_AppApp.swift in Sources */,
+				B70203462B5970F200B721AA /* HomeView.swift in Sources */,
+				B70203582B5971FE00B721AA /* AllEventsView.swift in Sources */,
+				B70203422B5923BA00B721AA /* FormModel.swift in Sources */,
+				B702034C2B59714B00B721AA /* SearchBarItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
