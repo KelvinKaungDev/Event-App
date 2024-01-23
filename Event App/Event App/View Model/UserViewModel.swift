@@ -4,28 +4,27 @@ import Alamofire
 
 @Observable class UserViewModel {
     static var shared = UserViewModel()
-    var users = [Users]()
     
-    public func fetchAllUsers(completion: @escaping ([Users]) -> Void) {
+    public func fetchAllUsers(completion: @escaping(Result<[Users], Error>) -> Void) {
         guard let url = URL(string: "https://events-mnh4cd7dd-u6511923-auedu.vercel.app/user/getAll") else { return }
         AF.request(url).responseDecodable(of: UserModel.self) { response in
             switch response.result {
-            case .success(let userData):
-                completion(userData.message)
+            case .success(let user):
+                completion(.success(user.message))
             case .failure(let userFetcherror):
-                print("Error \(userFetcherror)")
+                completion(.failure(userFetcherror))
             }
         }
     }
     
-    public func fetchSingleUser(userId : String) {
-        guard let url = URL(string: "https://events-8wgk5vo1o-u6511923-auedu.vercel.app/user/getOne/\(userId)") else { return }
+    public func fetchSingleUser(userId : String, completion: @escaping(Result<User, Error>) -> Void) {
+        guard let url = URL(string: "https://events-au.vercel.app/user/getOne/\(userId)") else { return }
         AF.request(url).responseDecodable(of: SingleUserModel.self) { response in
             switch response.result {
             case .success(let userData):
-                print(userData.message)
+                completion(.success(userData.message))
             case .failure(let userFetcherror):
-                print("Error \(userFetcherror)")
+                completion(.failure(userFetcherror))
             }
         }
     }
@@ -78,3 +77,4 @@ import Alamofire
         }
     }
 }
+
