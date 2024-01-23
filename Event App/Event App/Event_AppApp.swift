@@ -11,7 +11,8 @@ import SwiftUI
 struct Event_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // Start of the app
+            OnboardingView()
         }
     }
 }
