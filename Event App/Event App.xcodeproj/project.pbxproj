@@ -35,6 +35,7 @@
 		393F38902B591946008CCC40 /* EventModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388E2B591945008CCC40 /* EventModelTest.swift */; };
 		393F38912B591946008CCC40 /* UserModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388F2B591946008CCC40 /* UserModelTest.swift */; };
 		393F38942B59196D008CCC40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 393F38932B59196D008CCC40 /* Alamofire */; };
+		3957837C2B5F6ABA006D7389 /* singleUser.json in Resources */ = {isa = PBXBuildFile; fileRef = 3957837B2B5F6ABA006D7389 /* singleUser.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		393F388C2B591933008CCC40 /* allUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allUser.json; sourceTree = "<group>"; };
 		393F388E2B591945008CCC40 /* EventModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModelTest.swift; sourceTree = "<group>"; };
 		393F388F2B591946008CCC40 /* UserModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTest.swift; sourceTree = "<group>"; };
+		3957837B2B5F6ABA006D7389 /* singleUser.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = singleUser.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				393F388C2B591933008CCC40 /* allUser.json */,
+				3957837B2B5F6ABA006D7389 /* singleUser.json */,
 			);
 			path = Json;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3957837C2B5F6ABA006D7389 /* singleUser.json in Resources */,
 				393F388D2B591933008CCC40 /* allUser.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
