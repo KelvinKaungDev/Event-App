@@ -502,11 +502,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				3957837C2B5F6ABA006D7389 /* singleUser.json in Resources */,
-=======
 				B37B38402B5A4B2A002404A1 /* GoogleService-Info.plist in Resources */,
->>>>>>> eaaf880 (user sign-in flow)
 				393F388D2B591933008CCC40 /* allUser.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
