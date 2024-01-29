@@ -1,8 +1,9 @@
 import Foundation
 import Observation
 import Alamofire
+import Combine
 
-@Observable class UserViewModel {
+@Observable class UserViewModel: ObservableObject {
     static var shared = UserViewModel()
     
     public func fetchAllUsers(completion: @escaping(Result<[Users], Error>) -> Void) {
