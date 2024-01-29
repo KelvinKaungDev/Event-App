@@ -354,6 +354,8 @@
 				BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
 		B37B38332B5A483D002404A1 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
