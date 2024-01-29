@@ -35,7 +35,6 @@
 		393F38902B591946008CCC40 /* EventModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388E2B591945008CCC40 /* EventModelTest.swift */; };
 		393F38912B591946008CCC40 /* UserModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388F2B591946008CCC40 /* UserModelTest.swift */; };
 		393F38942B59196D008CCC40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 393F38932B59196D008CCC40 /* Alamofire */; };
-<<<<<<< HEAD
 		B7AF3F6D2B5E1CA60017E213 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */; };
  		B7AF3F6F2B5E1CF00017E213 /* SearchBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */; };
  		B7AF3F712B5E1D0A0017E213 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F702B5E1D0A0017E213 /* CategoryView.swift */; };
@@ -51,7 +50,6 @@
  		BCB4B31D2B5E3E5E00697BEC /* FillEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */; };
  		BCB4B31F2B5E3E7400697BEC /* PendingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31E2B5E3E7400697BEC /* PendingEventView.swift */; };
  		BCB4B3212B5E3EAB00697BEC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */; };
-=======
 		B37B38352B5A4857002404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37B38342B5A4857002404A1 /* AppDelegate.swift */; };
 		B37B38382B5A4892002404A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38372B5A4892002404A1 /* GoogleSignIn */; };
 		B37B383A2B5A4892002404A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38392B5A4892002404A1 /* GoogleSignInSwift */; };
@@ -79,7 +77,6 @@
 		B37B385C2B5A55FA002404A1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B37B385B2B5A55FA002404A1 /* FirebaseFirestoreSwift */; };
 		B37B385E2B5A55FA002404A1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = B37B385D2B5A55FA002404A1 /* FirebaseStorage */; };
 		B3FABA162B5FF42E0032AA3F /* UserPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */; };
->>>>>>> eaaf880 (user sign-in flow)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,7 +127,6 @@
 		393F388C2B591933008CCC40 /* allUser.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allUser.json; sourceTree = "<group>"; };
 		393F388E2B591945008CCC40 /* EventModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModelTest.swift; sourceTree = "<group>"; };
 		393F388F2B591946008CCC40 /* UserModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTest.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
  		B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarItemView.swift; sourceTree = "<group>"; };
  		B7AF3F702B5E1D0A0017E213 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -146,7 +142,6 @@
  		BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillEventDetailView.swift; sourceTree = "<group>"; };
  		BCB4B31E2B5E3E7400697BEC /* PendingEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingEventView.swift; sourceTree = "<group>"; };
  		BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-=======
 		B37B38342B5A4857002404A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B37B383E2B5A4B2A002404A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B37B38422B5A4B48002404A1 /* Event-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Event-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -156,7 +151,6 @@
 		B37B384F2B5A5014002404A1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B37B38532B5A5244002404A1 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostViewModel.swift; sourceTree = "<group>"; };
->>>>>>> eaaf880 (user sign-in flow)
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,12 +212,9 @@
 		393F38332B591641008CCC40 /* Event App */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				B7AF3F6B2B5E1C910017E213 /* View */,
-=======
 				B37B38422B5A4B48002404A1 /* Event-App-Info.plist */,
 				B37B383E2B5A4B2A002404A1 /* GoogleService-Info.plist */,
->>>>>>> eaaf880 (user sign-in flow)
 				393F386B2B591865008CCC40 /* Model */,
 				393F38602B591838008CCC40 /* View Model */,
 				393F38342B591641008CCC40 /* Event_AppApp.swift */,
@@ -343,7 +334,6 @@
 			path = Json;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		B7AF3F6B2B5E1C910017E213 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,7 +354,6 @@
 				BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */,
 			);
 			path = View;
-=======
 		B37B38332B5A483D002404A1 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +371,6 @@
 			children = (
 			);
 			name = Frameworks;
->>>>>>> eaaf880 (user sign-in flow)
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,12 +534,9 @@
 				B37B38502B5A5014002404A1 /* HomeView.swift in Sources */,
 				393F38372B591641008CCC40 /* ContentView.swift in Sources */,
 				393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */,
-<<<<<<< HEAD
 				B7AF3F792B5E1D930017E213 /* EventDetailsView.swift in Sources */,
 				BCB4B31F2B5E3E7400697BEC /* PendingEventView.swift in Sources */,
-=======
 				B37B38482B5A4BD2002404A1 /* Application_utility.swift in Sources */,
->>>>>>> eaaf880 (user sign-in flow)
 				393F38662B591859008CCC40 /* EventViewModel.swift in Sources */,
 				393F387A2B59189B008CCC40 /* UserPopulateEventListModel.swift in Sources */,
 				BCB4B31D2B5E3E5E00697BEC /* FillEventDetailView.swift in Sources */,
