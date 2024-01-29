@@ -17,17 +17,14 @@ struct Event_AppApp: App {
     
     var body: some Scene {
         WindowGroup {
-<<<<<<< HEAD
             // Start of the app
             OnboardingView()
-=======
-//            ContentView()
-            if isSignIn {
-                HomeView()
-            } else {
-                SignInWithGoogleView()
-            }
->>>>>>> eaaf880 (user sign-in flow)
+            //ContentView()
+            // if isSignIn {
+            //     HomeView()
+            // } else {
+            //     SignInWithGoogleView()
+            // }
         }
     }
 }
