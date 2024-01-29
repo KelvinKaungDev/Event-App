@@ -1,8 +1,9 @@
 import Foundation
 import Alamofire
-
-class UnitViewModel {
-    var shared = UnitViewModel()
+ 
+class UnitViewModel: ObservableObject{
+    
+//    var shared = UnitViewModel()
     
     public func fetchAllUnits(completion: @escaping (Result<[Units], Error>) -> Void) {
         guard let url = URL(string: "https://events-au.vercel.app/unit/getAll") else { return }
