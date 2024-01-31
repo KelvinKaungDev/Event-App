@@ -2,6 +2,8 @@
 
 
 import SwiftUI
+import Kingfisher
+import FirebaseAuth
 
 struct HomeView : View {
     @State var searchKeyword:String = ""
@@ -17,12 +19,14 @@ struct HomeView : View {
                     Spacer()
                         .frame(height: 15)
                     HStack(spacing:10){
-                        Image("profilePic")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(Circle())
-                            .frame(width:45,height:45,alignment:.center)
-                            .shadow(color:.black,radius: 5,x:5,y:5)
+                        if let photoURL = Auth.auth().currentUser?.photoURL {
+                            KFImage(photoURL)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(Circle())
+                                .frame(width:45,height:45,alignment:.center)
+                                .shadow(color:.black,radius: 5,x:5,y:5)
+                        }
                         VStack(alignment:.leading){
                             Text("Welcome Back")
                                 .foregroundStyle(.white)

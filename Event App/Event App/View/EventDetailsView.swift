@@ -17,7 +17,7 @@ struct EventDetailsView: View {
             Image(event.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width:393,height:317)
+                .frame(maxWidth: .infinity, maxHeight: 317)
             ScrollView(.vertical,showsIndicators: true){
                 VStack(alignment:.leading,spacing:15){
                     Text(event.name.rawValue)

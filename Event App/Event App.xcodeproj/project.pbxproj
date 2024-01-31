@@ -36,6 +36,7 @@
 		393F38912B591946008CCC40 /* UserModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388F2B591946008CCC40 /* UserModelTest.swift */; };
 		393F38942B59196D008CCC40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 393F38932B59196D008CCC40 /* Alamofire */; };
 		B31142932B68EA97004C6A16 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31142922B68EA97004C6A16 /* ProfileView.swift */; };
+		B37762DC2B6AB4C100ED9F00 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B37762DB2B6AB4C100ED9F00 /* Kingfisher */; };
 		B37B38352B5A4857002404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37B38342B5A4857002404A1 /* AppDelegate.swift */; };
 		B37B38382B5A4892002404A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38372B5A4892002404A1 /* GoogleSignIn */; };
 		B37B383A2B5A4892002404A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38392B5A4892002404A1 /* GoogleSignInSwift */; };
@@ -155,6 +156,7 @@
 				B37B38582B5A55FA002404A1 /* FirebaseDatabase in Frameworks */,
 				B37B383A2B5A4892002404A1 /* GoogleSignInSwift in Frameworks */,
 				393F38942B59196D008CCC40 /* Alamofire in Frameworks */,
+				B37762DC2B6AB4C100ED9F00 /* Kingfisher in Frameworks */,
 				B37B385C2B5A55FA002404A1 /* FirebaseFirestoreSwift in Frameworks */,
 				B37B38382B5A4892002404A1 /* GoogleSignIn in Frameworks */,
 				B37B385E2B5A55FA002404A1 /* FirebaseStorage in Frameworks */,
@@ -393,6 +395,7 @@
 				B37B38592B5A55FA002404A1 /* FirebaseFirestore */,
 				B37B385B2B5A55FA002404A1 /* FirebaseFirestoreSwift */,
 				B37B385D2B5A55FA002404A1 /* FirebaseStorage */,
+				B37762DB2B6AB4C100ED9F00 /* Kingfisher */,
 			);
 			productName = "Event App";
 			productReference = 393F38312B591641008CCC40 /* Event App.app */;
@@ -470,6 +473,7 @@
 				393F38922B59196D008CCC40 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				B3FD0D5A2B5A4772004D2B12 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				B37B383B2B5A49C7002404A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B37762DA2B6AB4C000ED9F00 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 393F38322B591641008CCC40 /* Products */;
 			projectDirPath = "";
@@ -905,6 +909,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		B37762DA2B6AB4C000ED9F00 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 		B37B383B2B5A49C7002404A1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -928,6 +940,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 393F38922B59196D008CCC40 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B37762DB2B6AB4C100ED9F00 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B37762DA2B6AB4C000ED9F00 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		B37B38372B5A4892002404A1 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
