@@ -42,7 +42,17 @@ struct SignInWithGoogleView: View {
             Image("OnBoardingPhoto")
                 .resizable()
                 .frame(width: 400, height: 400)
-                            
+             
+            HStack{
+                Text("By clicking the continue with google button, you’re agree to events.au’s ").font(.system(size: 15))
+                    + Text("Terms and Service").bold().font(.system(size: 15))
+                    + Text(" and acknowledge the ").font(.system(size: 15))
+                    + Text("Privacy and Policy.").bold()
+                    .font(.system(size: 15))
+            }
+            .padding()
+                
+            
             Button{
                 signInWithGoogle()
             }label: {

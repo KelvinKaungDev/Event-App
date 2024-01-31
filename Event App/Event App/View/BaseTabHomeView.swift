@@ -19,7 +19,7 @@ struct BaseTabHomeView: View {
                 .tabItem{
                     Label("Upload", systemImage: "square.and.arrow.up")
                 }
-            Text("Profile")
+            ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

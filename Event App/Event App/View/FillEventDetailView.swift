@@ -74,7 +74,7 @@ struct FillEventDetailView: View {
                     .fill(.white)
                     .overlay(
                         HStack(alignment: .center){
-                            TextField("Category", text:$category)
+                            TextField("Category", text:$category).disabled(true)
                             Spacer()
                             Menu{
                                 ForEach(options, id:\.self){item in
@@ -86,6 +86,8 @@ struct FillEventDetailView: View {
                                 }
                             }label: {
                                 Image(systemName: "arrowtriangle.down.fill")
+                                    .resizable()
+                                    .frame(width: 10, height: 10)
                                     .foregroundColor(.black)
                             }
                         }.padding()
