@@ -78,14 +78,14 @@ struct OnboardingView: View {
                             }
                         }.offset(x: -130)
                         Spacer()
-                        NavigationLink(destination: BaseTabHomeView(), isActive: $shouldNavigateHome) {
+                        NavigationLink(destination: SignInWithGoogleView(), isActive: $shouldNavigateHome) {
                             Button(action: {
                                 if self.currentStep < onboardingSteps.count - 1{
                                     self.currentStep += 1
                                 } else{
                                     self.shouldNavigateHome = true
+                                    UserDefaults.standard.set(true, forKey: "Is First Time User")
                                 }
-                                
                                 
                             }, label: {
                                 RoundedRectangle(cornerRadius: 50)
@@ -109,7 +109,6 @@ struct OnboardingView: View {
                     }
                 }
             }
-//            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .ignoresSafeArea()
         }
         
