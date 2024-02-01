@@ -20,97 +20,112 @@ struct ProfileView: View {
     
     var body: some View {
         
+        
         NavigationStack{
-            
-            VStack {
+            ZStack {
+                Path { path in
+                    //Top left
+                    path.move(to: CGPoint(x: 0, y: 0))
+                    //Left vertical bound
+                    path.addLine(to: CGPoint(x: 0, y: 300))
+                    //Curve
+                    path.addCurve(to: CGPoint(x: 430, y: 200), control1: CGPoint(x: 175, y: 350), control2: CGPoint(x: 250, y: 80))
+                    //Right vertical bound
+                    path.addLine(to: CGPoint(x: 450, y: 0))
+                }
+                .fill(.blue)
+                .edgesIgnoringSafeArea(.top)
                 
-                if let photoURL = Auth.auth().currentUser?.photoURL {
-                    KFImage(photoURL)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .clipShape(Circle())
-                        .cornerRadius(20)
-                        .padding([.bottom, .trailing], 4)
-                }
-                
-                HStack(spacing: 30){
-                    VStack{
-                        Text("326")
-                        Text("Participated")
+                VStack {
+                    
+                    if let photoURL = Auth.auth().currentUser?.photoURL {
+                        KFImage(photoURL)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .cornerRadius(20)
+                            .padding([.bottom, .trailing], 4)
                     }
-                    VStack{
-                        Text("98")
-                        Text("Organized")
-                    }
-                    VStack{
-                        Text("1020")
-                        Text("On Going")
-                    }
-                }
-                Divider()
-                if !storedUserId.isEmpty {
-                    Text("User ID: \(storedUserId)")
-                        .padding()
-                    Text("Username: \(username)")
-                    Text("Email: \(email)")
-                }
-                Button(action: {
-                    isSignedOut = true
-                }) {
-                    Text("Sign Out")
-                        .padding()
-                        .background(.black)
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
-                        .padding()
-                }
-                .alert("Are you sure you want to sign out?", isPresented: $isSignedOut) {
-                    Button("OK") {
-                        UserDefaults.standard.removeObject(forKey: "UserID")
-                        do {
-                            try Auth.auth().signOut()
-                            UserDefaults.standard.set(false, forKey: "signIn")
-                            
-                        } catch let signOutError as NSError {
-                            print("Error signing out: %@", signOutError)
+                    
+                    HStack(spacing: 30){
+                        VStack{
+                            Text("326")
+                            Text("Participated")
+                        }
+                        VStack{
+                            Text("98")
+                            Text("Organized")
+                        }
+                        VStack{
+                            Text("1020")
+                            Text("On Going")
                         }
                     }
-                    Button("Cancel", role: .cancel) {
-                        
+                    Divider()
+                    if !storedUserId.isEmpty {
+                        Text("User ID: \(storedUserId)")
+                            .padding()
+                        Text("Username: \(username)")
+                        Text("Email: \(email)")
                     }
-                }
-            }
-            .onAppear(perform: {
-                if let userId = UserDefaults.standard.string(forKey: "UserID"){
-                    print("UserID in UserDefaults: \(userId)")
-                    storedUserId = userId
-                    userViewModel.fetchSingleUser(userId: userId) { result in
-                        switch result {
-                        case .success(let user):
-                            DispatchQueue.main.async {
-                                self.username = user.username
-                                print(user.username)
-                                self.email = user.email ?? "No Email Found"
-                                print(user.email ?? "Email not available")
+                    Button(action: {
+                        isSignedOut = true
+                    }) {
+                        Text("Sign Out")
+                            .padding()
+                            .background(.black)
+                            .cornerRadius(12)
+                            .foregroundColor(.white)
+                            .padding()
+                    }
+                    .alert("Are you sure you want to sign out?", isPresented: $isSignedOut) {
+                        Button("OK") {
+                            UserDefaults.standard.removeObject(forKey: "UserID")
+                            do {
+                                try Auth.auth().signOut()
+                                UserDefaults.standard.set(false, forKey: "signIn")
+                                
+                            } catch let signOutError as NSError {
+                                print("Error signing out: %@", signOutError)
                             }
-                        case .failure(let error):
-                            print(error)
+                        }
+                        Button("Cancel", role: .cancel) {
+                            
                         }
                     }
-                }else{
-                    print("No UserID found in UserDefaults.")
-                    storedUserId = ""
                 }
-            })
-            .toolbar {
-                Button(action: {
-                    print("nigga")
-                }, label: {
-                    Image(systemName: "gearshape")
-                        .foregroundStyle(.black)
-                        .frame(width: 30, height:30)
+                .onAppear(perform: {
+                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
+                        print("UserID in UserDefaults: \(userId)")
+                        storedUserId = userId
+                        userViewModel.fetchSingleUser(userId: userId) { result in
+                            switch result {
+                            case .success(let user):
+                                DispatchQueue.main.async {
+                                    self.username = user.username
+                                    print(user.username)
+                                    self.email = user.email ?? "No Email Found"
+                                    print(user.email ?? "Email not available")
+                                }
+                            case .failure(let error):
+                                print(error)
+                            }
+                        }
+                    }else{
+                        print("No UserID found in UserDefaults.")
+                        storedUserId = ""
+                    }
                 })
+                .toolbar {
+                    Button(action: {
+                        print("nigga")
+                    }, label: {
+                        Image(systemName: "gearshape")
+                            .foregroundStyle(.black)
+                            .frame(width: 30, height:30)
+                    })
+            }
             }
         }
         

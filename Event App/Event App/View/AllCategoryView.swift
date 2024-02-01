@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct AllCategoryView: View {
-    
-    
-    
+
     let categories:[EventCategoryTitle] = [
         .init(id: 1, name: .allEvents),
         .init(id: 2, name: .design),
@@ -20,7 +18,6 @@ struct AllCategoryView: View {
 
     ]
    
-
     var body: some View {
         ScrollView(.horizontal,showsIndicators: false){
             HStack(spacing:-20){

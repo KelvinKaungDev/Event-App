@@ -21,26 +21,31 @@ struct AllEventsViews: View {
         GridItem(.adaptive(minimum: 165))
     ]
     
+    let testData: [Events] = [
+        Events(id: "abcd", name: "D*code", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0),
+        Events(id: "1234", name: "Music", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "CL", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)
+    ]
+    
     var body: some View {
-       
         
-        
+        NavigationStack {
             ScrollView(.vertical,showsIndicators: false) {
-                ZStack{
-                    LazyVGrid(columns: columns, spacing: 120) {
-                        ForEach(eventsData, id: \.id) { event in
-                            NavigationLink(destination:  EventDetailsView(event:event)) {
-                                EventCardView(event: event)
+                    ZStack{
+                        LazyVGrid(columns: columns, spacing: 120) {
+                            ForEach(testData, id: \.id) { test in
+    //                            EventCardView(test: .constant(test))
+//                                NavigationLink(destination:  EventDetailsView(test: .constant(test))) {
+                                    EventCardView(test: .constant(test))
+//                                }
                                 
                             }
-                            
                         }
+                        
                     }
-                    
-                }
-                .padding(.bottom,70)
-                .padding(.top,60)
+                    .padding(.bottom,70)
+                    .padding(.top,60)
             }
+        }
         
     }
 }
