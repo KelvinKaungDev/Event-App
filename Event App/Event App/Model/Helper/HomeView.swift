@@ -1,10 +1,3 @@
-//
-//  HomeView.swift
-//  Event App
-//
-//  Created by Akito Daiki on 19/1/2567 BE.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseAuth

@@ -3,7 +3,7 @@
 
 import SwiftUI
 
-struct HomeView : View {
+struct BaseHomeView : View {
     @State var searchKeyword:String = ""
     @State var categorySelected:Bool = false
     
@@ -55,13 +55,13 @@ struct HomeView : View {
                                 
                                 AllEventsViews()
                                 
-                                
-                            } //end ofVStack
+                            }
                             .padding(.vertical)
                         )
                     
-                } //end of ZStack
-        }// end of NavigationStack
+                }
+                .ignoresSafeArea()
+        }
         .navigationBarBackButtonHidden(true)
         
         

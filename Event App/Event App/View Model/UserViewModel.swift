@@ -77,5 +77,18 @@ import Combine
             }
         }
     }
+
+    public func createUser(userInfo: [String : Any]) {
+        guard let url = URL(string: "https://events-au.vercel.app/user/create") else { fatalError("Error") }
+        AF.request(url, method: .post, parameters: userInfo, encoding: JSONEncoding.default)
+            .response { response in
+                switch response.result {
+                case .success(let data):
+                    print("Success: \(data!)")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }
+    }
 }
 

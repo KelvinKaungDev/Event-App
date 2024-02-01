@@ -1,16 +1,8 @@
-//
-//  FillEventDetailView.swift
-//  Event App
-//
-//  Created by Austin Xu on 2024/1/22.
-//
-
 import SwiftUI
 import PhotosUI
 
 struct FillEventDetailView: View {
-//    @State private var avatarItem: PhotosPickerItem?
-//    @State private var avatarImage: Image?
+
     @State var options = ["Education", "Entertainment", "Networking", "Design"]
     @State private var eventTitle = ""
     @State private var category = ""
@@ -34,30 +26,6 @@ struct FillEventDetailView: View {
     var body: some View {
         ScrollView {
             VStack{
-//                VStack {
-//                    RoundedRectangle(cornerRadius: 10)
-//                        .stroke(Color("text_color_grey"))
-//                        .fill(.white)
-//                        .overlay(
-//                            avatarImage?
-//                                .resizable()
-//                                .scaledToFit()
-////                                .frame(width: 300, height: 300)
-//                        ).frame(width: 300, height: 300)
-//                    PhotosPicker("Select avatar", selection: $avatarItem, matching: .images)
-                    
-                    
-//                }
-//                .onChange(of: avatarItem) {
-//                    Task {
-//                        if let loaded = try? await avatarItem?.loadTransferable(type: Image.self) {
-//                            avatarImage = loaded
-//                        } else {
-//                            print("Failed")
-//                        }
-//                    }
-//                }
-                // Event Title
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color("text_color_grey"))
                     .fill(.white)

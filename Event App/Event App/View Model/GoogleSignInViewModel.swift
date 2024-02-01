@@ -13,9 +13,7 @@ import FirebaseFirestore
 
 class FirebAuthViewModel: ObservableObject {
     
-    init() {
-        // Initialization
-    }
+    init() {}
     
     private func saveUserId(_ userId: String) {
         UserDefaults.standard.set(userId, forKey: "UserID")
@@ -67,7 +65,6 @@ class FirebAuthViewModel: ObservableObject {
         GIDSignIn.sharedInstance.configuration = config
         GIDSignIn.sharedInstance.signIn(withPresenting: Application_utility.rootViewController) { user, error in
             if let error = error {
-                // Handle the error if Google Sign-In failed
                 DispatchQueue.main.async {
                     completion(error, false)
                 }
@@ -75,8 +72,6 @@ class FirebAuthViewModel: ObservableObject {
             }
             
             guard let user = user?.user, let idToken = user.idToken else {
-                // If user is nil, it means the user cancelled the Google Sign-In
-                // Do not proceed with Firebase authentication
                 DispatchQueue.main.async {
                     completion(nil, false)
                 }
@@ -86,7 +81,6 @@ class FirebAuthViewModel: ObservableObject {
             let accessToken = user.accessToken
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
             
-            // Continue with Firebase authentication
             Auth.auth().signIn(with: credential) { authResult, error in
                 if let error = error {
                     DispatchQueue.main.async {

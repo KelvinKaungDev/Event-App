@@ -23,8 +23,6 @@ struct AllEventsViews: View {
     
     var body: some View {
        
-        
-        
             ScrollView(.vertical,showsIndicators: false) {
                 ZStack{
                     LazyVGrid(columns: columns, spacing: 120) {
@@ -41,6 +39,7 @@ struct AllEventsViews: View {
                 .padding(.bottom,70)
                 .padding(.top,60)
             }
+            .edgesIgnoringSafeArea(.all) 
         
     }
 }
