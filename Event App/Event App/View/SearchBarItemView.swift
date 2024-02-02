@@ -34,7 +34,7 @@ struct SearchBarItemView: View {
                     .font(.system(size: 30))
                     .foregroundStyle(.white)
                     .fontWeight(.bold)
-                Spacer()
+                Spacer()d
             }.padding(.horizontal, 20)
 
             Spacer()

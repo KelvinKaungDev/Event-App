@@ -33,7 +33,14 @@ struct ProfileView: View {
                     //Right vertical bound
                     path.addLine(to: CGPoint(x: 450, y: 0))
                 }
-                .fill(.blue)
+                .fill(
+                    LinearGradient(
+                        colors: [Color("red_primary"),
+                                 Color("red_secondary"),
+                                 Color("red_secondary")],
+                        startPoint: .top,
+                        endPoint: .bottom)
+                )
                 .edgesIgnoringSafeArea(.top)
                 
                 VStack {
@@ -119,10 +126,10 @@ struct ProfileView: View {
                 })
                 .toolbar {
                     Button(action: {
-                        print("nigga")
+//                        print("nigga")
                     }, label: {
                         Image(systemName: "gearshape")
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.white)
                             .frame(width: 30, height:30)
                     })
             }
