@@ -12,9 +12,27 @@ struct HomeView : View {
     var body : some View {
         NavigationStack{
             ZStack{
-                Image("backgroundImage")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
+                GeometryReader{ geometry in
+                    Path { path in
+                        //Top left
+                        path.move(to: CGPoint(x: 0, y: 0))
+                        path.addLine(to: CGPoint(x: 0, y: 340))
+                        path.addLine(to: CGPoint(x: geometry.size.width, y: 340))
+                        path.addLine(to: CGPoint(x: geometry.size.width, y: 0))
+                        path.addLine(to: CGPoint(x: 0, y: 0))
+                    }
+                    .fill(
+                        LinearGradient(
+                            colors: [Color("red_primary"),
+                                     Color("red_secondary"),
+                                     Color("red_secondary")],
+                            startPoint: .top,
+                            endPoint: .bottom)
+                    )
+                    .edgesIgnoringSafeArea(.top)
+                }
+                
+
                 VStack(alignment: .leading, spacing:10){
                     Spacer()
                         .frame(height: 15)
@@ -45,23 +63,10 @@ struct HomeView : View {
                             .font(.system(size:25))
                         
                     } .padding()
-                    SearchBarItemView(searchKeyword: $searchKeyword)
-                        .padding(.vertical)
-                    
-                    AllCategoryView()
-                    
-                    Text("Upcoming Events")
-                        .font(.system(size:30))
-                        .fontWeight(.bold)
-                        .padding(.horizontal)
-                        .foregroundStyle(.white)
-                    Spacer()
-                    
-                    AllEventsViews()
-                    
+                    SearchBarItemView()
                     
                 } //end ofVStack
-               .padding(.vertical)
+//               .padding(.vertical)
                 
             }//end of ZStack
         }

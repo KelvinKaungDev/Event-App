@@ -8,45 +8,47 @@
 import SwiftUI
 
 struct SearchBarItemView: View {
-    @Binding var searchKeyword: String
+    @State private var searchKeyword = ""
+    
     
     var body: some View {
         
-        ZStack {
-            Rectangle()
-              .foregroundColor(.clear)
-              .frame(width: 360, height: 48)
-              .background(.white.opacity(0.2))
-              .cornerRadius(120)
-              .overlay(
-                RoundedRectangle(cornerRadius: 120)
-                  .inset(by: 0.5)
-                  .stroke(Color(red: 0.67, green: 0.67, blue: 0.67), lineWidth: 1)
-              )
+        VStack {  
+            RoundedRectangle(cornerRadius: 120)
+                .stroke(Color("text_color_grey"))
+                .fill(.white)
+                .overlay(
+                    HStack {
+                        TextField("Find Events", text: $searchKeyword)
+                            .padding(.horizontal, 10)
+                            .foregroundColor(.white)
+                        Image(systemName: "magnifyingglass")
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                    }.padding(.horizontal)
+                ).frame(width: 360, height: 48)
+            Spacer()
+                .frame(height: 20)
+            HStack{
+                Text("Upcoming Events")
+                    .font(.system(size: 30))
+                    .foregroundStyle(.white)
+                    .fontWeight(.bold)
+                Spacer()d
+            }.padding(.horizontal, 20)
+
+            Spacer()
+            AllEventsViews()
             
-            HStack {
-                
-                TextField("Find Events", text: $searchKeyword)
-                    .padding(.horizontal, 10)
-                    .foregroundColor(.white)
-                
-                
-                Image(systemName: "magnifyingglass")
-                    .foregroundColor(.white)
-                    .padding(.horizontal)
-                    
-                
-            }
-            .padding(.horizontal)
         }
-        .frame(height: 36) // Set a fixed height for the search bar
-        .padding(.horizontal, 16)
+//        .frame(height: 36) // Set a fixed height for the search bar
+//        .padding(.horizontal, 16)
     }
         
 
     
 }
 #Preview {
-    SearchBarItemView(searchKeyword: .constant("Seach your events"))
+    SearchBarItemView()
 }
 
