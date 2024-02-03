@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventDetailsView: View {    
-    @Binding var test: Events
+    @Binding var event: Events
         
     var body: some View {
         
@@ -19,18 +19,18 @@ struct EventDetailsView: View {
                 .frame(maxWidth: .infinity, maxHeight: 317)
             ScrollView(.vertical,showsIndicators: true){
                 VStack(alignment:.leading,spacing:15){
-                    Text(test.name)
+                    Text(event.name)
                         .bold()
                         .font(.system(size:25))
-                    Text(test.location)
+                    Text(event.location)
                         .fontWeight(.regular)
                         .font(.system(size:18))
                     HStack{
-                        Text("📆 \(K.dateformatter(date: test.date))")
+                        Text("📆 \(K.dateformatter(date: event.date))")
                             .fontWeight(.regular)
                             .font(.system(size:18))
                             .opacity(0.8)
-                        Text("⏰ \(K.timeformatter(date: test.startTime)) Onwards")
+                        Text("⏰ \(K.timeformatter(date: event.startTime)) Onwards")
                             .fontWeight(.regular)
                             .font(.system(size:18))
                             .opacity(0.8)
@@ -42,14 +42,14 @@ struct EventDetailsView: View {
                         
 //                        Text(test.participantList)
 //                            .foregroundStyle(.red)
-                        Text(" \(test.participantList.count)")
+                        Text(" \(event.participantList.count)")
                         Text(" attending this event")
                         
                     }
                     Text("Description")
                         .bold()
                         .font(.system(size:20))
-                    Text(test.description)
+                    Text(event.description)
                     
                 }
                 
@@ -81,6 +81,6 @@ struct EventDetailsView: View {
 
 #Preview {
     EventDetailsView(
-        test: .constant(Events(id: "abcd", name: "D*code", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: ["658927ee969238ac81d637af"], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
+        event: .constant(Events(id: "abcd", name: "D*code", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: ["658927ee969238ac81d637af"], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
 }
 

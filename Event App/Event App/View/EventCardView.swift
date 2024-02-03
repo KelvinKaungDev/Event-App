@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct EventCardView: View {
-    @Binding var test: Events
-//    let event:EventsData
+    @Binding var event: Events
     var body: some View {
-        NavigationLink(destination: EventDetailsView(test: .constant(test)), label: {
+        NavigationLink(destination: EventDetailsView(event: .constant(event)), label: {
             ZStack {
-                   
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(.white)
                         .shadow(color:.gray,radius: 5,x:5,y:5)
@@ -29,19 +27,19 @@ struct EventCardView: View {
                         // Text Overlay
                         
                         VStack(alignment:.leading,spacing:10){
-                            Text("\(test.name)")
+                            Text("\(event.name)")
                                 .font(.system(size:20))
                             .foregroundColor(.black)
                             .bold()
                             .lineLimit(3)
                             .offset(y:-10)
            
-                            Text("\(test.location)")
+                            Text("\(event.location)")
                                 .font(.system(size:16))
                                 .foregroundColor(.black)
                                 .lineLimit(1)
 
-                            Text("\(K.dateformatter(date: test.date))")
+                            Text("\(K.dateformatter(date: event.date))")
                                 .font(.system(size:16))
                                 .foregroundColor(.black)
                                 .lineLimit(1)
@@ -67,6 +65,6 @@ struct EventCardView: View {
 
 #Preview {
     EventCardView(
-        test: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
+        event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
 }
 

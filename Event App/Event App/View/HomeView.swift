@@ -8,6 +8,10 @@ import FirebaseAuth
 struct HomeView : View {
     @State var searchKeyword:String = ""
     @State var categorySelected:Bool = false
+    init(){
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+    }
     
     var body : some View {
         NavigationStack{
@@ -31,47 +35,35 @@ struct HomeView : View {
                     )
                     .edgesIgnoringSafeArea(.top)
                 }
-                
-
-                VStack(alignment: .leading, spacing:10){
-                    Spacer()
-                        .frame(height: 15)
-                    HStack(spacing:10){
+                AllEventsViews()
+                                    
+            }//end of ZStack
+            .toolbar{
+                ToolbarItem(placement: .topBarLeading) {
+                    HStack{
                         if let photoURL = Auth.auth().currentUser?.photoURL {
                             KFImage(photoURL)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
                                 .clipShape(Circle())
-                                .frame(width:45,height:45,alignment:.center)
-                                .shadow(color:.black,radius: 5,x:5,y:5)
+                                .cornerRadius(20)
+                                .padding([.bottom, .trailing], 4)
                         }
-                        VStack(alignment:.leading){
-                            Text("Welcome Back")
-                                .foregroundStyle(.white)
-                                .font(.system(size:14))
-                                .fontWeight(.medium)
-                            Text("Patrick Swan")
-                                .foregroundStyle(.white)
-                                .font(.system(size:20))
-                                .fontWeight(.bold)
-                            
-                        }// end of VStack
-                        .padding(.horizontal,4)
-                        Spacer()
-                        Image(systemName: "bell.fill")
+                        Text("Welcome Back")
                             .foregroundStyle(.white)
-                            .font(.system(size:25))
-                        
-                    } .padding()
-                    SearchBarItemView()
-                    
-                } //end ofVStack
-//               .padding(.vertical)
-                
-            }//end of ZStack
-        }
-        // end of NavigationStack
+                            .font(.system(size:20))
+                            .fontWeight(.medium)
+                        Text("Patrick Swan")
+                            .foregroundStyle(.white)
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
+                    }
+                }
+            }// end of Toolbar
+        }// end of NavigationStack
         .navigationBarBackButtonHidden(true)
+
     }
 }
 
