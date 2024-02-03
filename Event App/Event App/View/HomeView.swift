@@ -38,38 +38,32 @@ struct HomeView : View {
                 AllEventsViews()
                                     
             }//end of ZStack
-            .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                ToolbarItem(placement: .principal) {
+                ToolbarItem(placement: .topBarLeading) {
                     HStack{
                         if let photoURL = Auth.auth().currentUser?.photoURL {
                             KFImage(photoURL)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
                                 .clipShape(Circle())
-                                .frame(width:45,height:45,alignment:.center)
-                                .shadow(color:.black,radius: 5,x:5,y:5)
+                                .cornerRadius(20)
+                                .padding([.bottom, .trailing], 4)
                         }
-                        VStack(alignment: .leading) {
-                            Text("Welcome Back")
-                                .foregroundStyle(.white)
-                                .font(.system(size:14))
-                                .fontWeight(.medium)
-                            Text("Patrick Swan")
-                                .foregroundStyle(.white)
-                                .font(.system(size:20))
-                                .fontWeight(.bold)
-                        }
-                        Spacer()
-                        Image(systemName: "bell.fill")
+                        Text("Welcome Back")
                             .foregroundStyle(.white)
-                            .font(.system(size:25))
-                    }.padding(.bottom, 40)
+                            .font(.system(size:20))
+                            .fontWeight(.medium)
+                        Text("Patrick Swan")
+                            .foregroundStyle(.white)
+                            .font(.system(size:20))
+                            .fontWeight(.bold)
+                    }
                 }
             }// end of Toolbar
-        }
-        // end of NavigationStack
+        }// end of NavigationStack
         .navigationBarBackButtonHidden(true)
+
     }
 }
 
