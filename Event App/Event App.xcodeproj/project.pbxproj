@@ -352,11 +352,9 @@
 			isa = PBXGroup;
 			children = (
 				B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */,
-				B7AF3F702B5E1D0A0017E213 /* CategoryView.swift */,
-				B7AF3F722B5E1D160017E213 /* AllCategoryView.swift */,
 				B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */,
-				B7AF3F742B5E1D3A0017E213 /* EventCardView.swift */,
 				B7AF3F762B5E1D620017E213 /* AllEventsView.swift */,
+				B7AF3F742B5E1D3A0017E213 /* EventCardView.swift */,
 				B7AF3F782B5E1D930017E213 /* EventDetailsView.swift */,
 				B7AF3F7A2B5E1DA70017E213 /* RegisterEventView.swift */,
 				B7AF3F7C2B5E1DC10017E213 /* RegisteredSuccessView.swift */,
@@ -369,6 +367,8 @@
 				B31142922B68EA97004C6A16 /* ProfileView.swift */,
 				B37B38532B5A5244002404A1 /* RegistrationView.swift */,
 				B37B384B2B5A4F7A002404A1 /* SignInWithGoogleView.swift */,
+				B7AF3F702B5E1D0A0017E213 /* CategoryView.swift */,
+				B7AF3F722B5E1D160017E213 /* AllCategoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

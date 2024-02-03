@@ -29,7 +29,7 @@ struct AllEventsViews: View {
                 ZStack{
                     LazyVGrid(columns: columns, spacing: 120) {
                         ForEach(filteredEvents, id: \.id) { event in
-                                EventCardView(test: .constant(event))
+                                EventCardView(event: .constant(event))
                         }
                     }
                     
