@@ -8,6 +8,10 @@ import FirebaseAuth
 struct HomeView : View {
     @State var searchKeyword:String = ""
     @State var categorySelected:Bool = false
+    init(){
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
+    }
     
     var body : some View {
         NavigationStack{
@@ -31,12 +35,13 @@ struct HomeView : View {
                     )
                     .edgesIgnoringSafeArea(.top)
                 }
-                
-
-                VStack(alignment: .leading, spacing:10){
-                    Spacer()
-                        .frame(height: 15)
-                    HStack(spacing:10){
+                AllEventsViews()
+                                    
+            }//end of ZStack
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar{
+                ToolbarItem(placement: .principal) {
+                    HStack{
                         if let photoURL = Auth.auth().currentUser?.photoURL {
                             KFImage(photoURL)
                                 .resizable()
@@ -45,7 +50,7 @@ struct HomeView : View {
                                 .frame(width:45,height:45,alignment:.center)
                                 .shadow(color:.black,radius: 5,x:5,y:5)
                         }
-                        VStack(alignment:.leading){
+                        VStack(alignment: .leading) {
                             Text("Welcome Back")
                                 .foregroundStyle(.white)
                                 .font(.system(size:14))
@@ -54,21 +59,14 @@ struct HomeView : View {
                                 .foregroundStyle(.white)
                                 .font(.system(size:20))
                                 .fontWeight(.bold)
-                            
-                        }// end of VStack
-                        .padding(.horizontal,4)
+                        }
                         Spacer()
                         Image(systemName: "bell.fill")
                             .foregroundStyle(.white)
                             .font(.system(size:25))
-                        
-                    } .padding()
-                    SearchBarItemView()
-                    
-                } //end ofVStack
-//               .padding(.vertical)
-                
-            }//end of ZStack
+                    }.padding(.bottom, 40)
+                }
+            }// end of Toolbar
         }
         // end of NavigationStack
         .navigationBarBackButtonHidden(true)

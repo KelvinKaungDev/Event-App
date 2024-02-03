@@ -13,7 +13,6 @@ struct EventCardView: View {
     var body: some View {
         NavigationLink(destination: EventDetailsView(test: .constant(test)), label: {
             ZStack {
-                   
                     RoundedRectangle(cornerRadius: 20)
                         .foregroundColor(.white)
                         .shadow(color:.gray,radius: 5,x:5,y:5)
