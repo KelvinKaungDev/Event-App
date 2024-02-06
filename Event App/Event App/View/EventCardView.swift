@@ -8,66 +8,63 @@
 import SwiftUI
 
 struct EventCardView: View {
-    let event:EventsData
+    @Binding var event: Events
     var body: some View {
-       
-           
+        NavigationLink(destination: EventDetailsView(event: .constant(event)), label: {
             ZStack {
-               
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundColor(.white)
-                    .shadow(color:.gray,radius: 5,x:5,y:5)
-                VStack {
-                   
-                    Image("swiftuihackathon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 165, height: 120)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .offset(y:-20)
-                    
-                    // Text Overlay
-                    VStack(alignment:.leading,spacing:10){
-                    Text("\(event.name.rawValue)")
-                            .font(.system(size:20))
-                        .foregroundColor(.black)
-                        .bold()
-                        .lineLimit(3)
-                        .offset(y:-10)
+                    RoundedRectangle(cornerRadius: 20)
+                        .foregroundColor(.white)
+                        .shadow(color:.gray,radius: 5,x:5,y:5)
+                    VStack {
+                       
+                        Image("swiftuihackathon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 165, height: 120)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .offset(y:-20)
                         
+                        // Text Overlay
                         
-                        Text("\(event.location)")
-                            .font(.system(size:16))
+                        VStack(alignment:.leading,spacing:10){
+                            Text("\(event.name)")
+                                .font(.system(size:20))
                             .foregroundColor(.black)
-                            .lineLimit(1)
-                        
-                        
-                        
-                        Text("\(event.date)")
-                            .font(.system(size:16))
-                            .foregroundColor(.black)
-                            .lineLimit(1)
-                     
-                    }
-                    .fixedSize(horizontal: false, vertical: true)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                     
-                    
-                }
-                
-              
-            } // end of ZStack
-            .frame(width: 165, height: 200)
-            
+                            .bold()
+                            .lineLimit(3)
+                            .offset(y:-10)
+           
+                            Text("\(event.location)")
+                                .font(.system(size:16))
+                                .foregroundColor(.black)
+                                .lineLimit(1)
 
+                            Text("\(K.dateformatter(date: event.date))")
+                                .font(.system(size:16))
+                                .foregroundColor(.black)
+                                .lineLimit(1)
+                         
+                        }
+                        .fixedSize(horizontal: false, vertical: true)
+                            .multilineTextAlignment(.leading)
+                            .padding()
+                         
+                        
+                    }
+                  
+                } // end of ZStack
+            .frame(width: 165, height: 200)
         }
+            
+            
+        )}
     }
         
  
 
 
 #Preview {
-    EventCardView(event:EventsData.init(id: 1, name: .swiftHackathon, location: "📍 TrueLabs", date: "📆 Dec 22, 2023", image: "swiftuihackathon"))
+    EventCardView(
+        event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
 }
 

@@ -14,7 +14,9 @@ struct Events: Codable {
     let isPending, isCompleted, isApproved, isRejected: Bool
     let isSuspended, isCancelled: Bool
     let pendingParticipantList: [String]
-    let participantList: [JSONAny]
+    
+    // I change JSONAny to String for participantList
+    let participantList: [String]
     let organizerList: [String]
     let creatorID, createdAt, updatedAt: String
     let v: Int

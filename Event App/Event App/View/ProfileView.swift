@@ -24,6 +24,10 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack{
             ZStack{
+        
+        
+        NavigationStack{
+            ZStack {
                 Path { path in
                     //Top left
                     path.move(to: CGPoint(x: 0, y: 0))
@@ -46,6 +50,9 @@ struct ProfileView: View {
 
                 
                 VStack {
+                
+                VStack {
+                    
                     if let photoURL = Auth.auth().currentUser?.photoURL {
                         KFImage(photoURL)
                             .resizable()
@@ -90,6 +97,29 @@ struct ProfileView: View {
                     .tint(.black)
                     
                     Divider()
+                    }
+                    
+                    HStack(spacing: 30){
+                        VStack{
+                            Text("326")
+                            Text("Participated")
+                        }
+                        VStack{
+                            Text("98")
+                            Text("Organized")
+                        }
+                        VStack{
+                            Text("1020")
+                            Text("On Going")
+                        }
+                    }
+                    Divider()
+                    if !storedUserId.isEmpty {
+                        Text("User ID: \(storedUserId)")
+                            .padding()
+                        Text("Username: \(username)")
+                        Text("Email: \(email)")
+                    }
                     Button(action: {
                         isSignedOut = true
                     }) {
@@ -152,6 +182,12 @@ struct ProfileView: View {
                             .frame(width: 30, height:30)
                     })
                 }
+                    }, label: {
+                        Image(systemName: "gearshape")
+                            .foregroundStyle(.white)
+                            .frame(width: 30, height:30)
+                    })
+            }
             }
         }
     }

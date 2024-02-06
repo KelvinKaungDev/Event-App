@@ -7,31 +7,30 @@
 
 import SwiftUI
 
-struct EventDetailsView: View {
-    let event: EventsData
-    @State var isExpanded = false
-    let longText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat"
+struct EventDetailsView: View {    
+    @Binding var event: Events
+        
     var body: some View {
         
         VStack(alignment:.leading,spacing:15){
-            Image(event.image)
+            Image("swiftuihackathon")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(maxWidth: .infinity, maxHeight: 317)
             ScrollView(.vertical,showsIndicators: true){
                 VStack(alignment:.leading,spacing:15){
-                    Text(event.name.rawValue)
+                    Text(event.name)
                         .bold()
                         .font(.system(size:25))
                     Text(event.location)
                         .fontWeight(.regular)
                         .font(.system(size:18))
                     HStack{
-                        Text(event.date)
+                        Text("📆 \(K.dateformatter(date: event.date))")
                             .fontWeight(.regular)
                             .font(.system(size:18))
                             .opacity(0.8)
-                        Text("⏰ 9 AM Onwards")
+                        Text("⏰ \(K.timeformatter(date: event.startTime)) Onwards")
                             .fontWeight(.regular)
                             .font(.system(size:18))
                             .opacity(0.8)
@@ -40,26 +39,20 @@ struct EventDetailsView: View {
                     HStack{
                         Image(systemName: "person.crop.circle")
                             .foregroundStyle(.red)
-                        Text("21 people")
-                            .foregroundStyle(.red)
-                        +
+                        
+//                        Text(test.participantList)
+//                            .foregroundStyle(.red)
+                        Text(" \(event.participantList.count)")
                         Text(" attending this event")
                         
                     }
                     Text("Description")
                         .bold()
                         .font(.system(size:20))
-                    Text(longText)
+                    Text(event.description)
                     
                 }
                 
-                //                if !isExpanded {
-                //                    Button("Read more...") {
-                //                        isExpanded.toggle()
-                //                    }
-                //                    .foregroundColor(.red)
-                ////                    .padding()
-                //                }
             } //end of Scroll View
             .padding(.horizontal)
             
@@ -76,17 +69,8 @@ struct EventDetailsView: View {
                 
                 
             }
-            
-            
-            
         } //end ofVStack
         .navigationTitle("Event Details")
-        
-        
-        
-        
-        
-        
         
     } //end of VStack
     
@@ -96,6 +80,7 @@ struct EventDetailsView: View {
 
 
 #Preview {
-    EventDetailsView(event:EventsData.init(id: 1, name: .swiftHackathon, location: "📍 TrueLabs, VMC", date: "📆 Dec 22, 2023", image: "swiftuihackathon"))
+    EventDetailsView(
+        event: .constant(Events(id: "abcd", name: "D*code", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: ["658927ee969238ac81d637af"], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
 }
 
