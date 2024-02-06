@@ -73,25 +73,9 @@ struct HomeView : View {
                             .font(.system(size:25))
                         
                     } .padding()
-                    SearchBarItemView(searchKeyword: $searchKeyword)
-                        .padding(.vertical)
-                    
-                    AllCategoryView()
-                    
-                    Text("Upcoming Events")
-                        .font(.system(size:30))
-                        .fontWeight(.bold)
-                        .padding(.horizontal)
-                        .foregroundStyle(.white)
-                    Spacer()
-                    
-                    AllEventsViews()
-                    
-                    
-                } //end ofVStack
-                .padding(.vertical)
+                }
                 
-            }//end of ZStack
+            }
         }
         .onAppear(perform: {
             if let userId = UserDefaults.standard.string(forKey: "UserID"){
@@ -112,19 +96,6 @@ struct HomeView : View {
                 storedUserId = ""
             }
         })
-        // end of NavigationStack
-                        Text("Welcome Back")
-                            .foregroundStyle(.white)
-                            .font(.system(size:20))
-                            .fontWeight(.medium)
-                        Text("Patrick Swan")
-                            .foregroundStyle(.white)
-                            .font(.system(size:20))
-                            .fontWeight(.bold)
-                    }
-                }
-            }// end of Toolbar
-        }// end of NavigationStack
         .navigationBarBackButtonHidden(true)
 
     }

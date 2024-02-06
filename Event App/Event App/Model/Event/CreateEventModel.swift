@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct postEventData {
+struct postEventData: Codable {
     let name: String
     let units: String
     let location: String

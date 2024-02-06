@@ -182,7 +182,7 @@ struct FillEventDetailView: View {
                             creatorId: userId,
                             organizerList: userId
                         )
-                        hostEventViewModel.hostEvent(eventData: eventData) { success, errorMessage in
+                        hostEventViewModel.hostEvent(eventData: eventData) { success in
                             if success {
                                 print("Event successfully hosted")
                                 self.shouldNavigate = true

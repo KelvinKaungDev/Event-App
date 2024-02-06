@@ -77,5 +77,28 @@ import Combine
             }
         }
     }
+    
+    public func signOutUser(userId: String, completion: @escaping (Bool) -> Void) {
+            let header: HTTPHeaders = [
+                .contentType("application/json")
+            ]
+            guard let url = URL(string : "https://events-au.vercel.app/user/signOut/\(userId)") else { return }
+            AF.request(url, method: .post, headers: header).response { response in
+                
+                debugPrint(response)
+                switch response.result {
+                    
+                case .success(let data):
+                    do {
+                        let json = try JSONSerialization.jsonObject(with: data!, options: [])
+                        print(json)
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                case .failure(let err):
+                    print(err.localizedDescription)
+                }
+            }
+        }
 }
 
