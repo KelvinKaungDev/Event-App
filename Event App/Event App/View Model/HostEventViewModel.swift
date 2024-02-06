@@ -18,7 +18,7 @@ class HostEventViewModel: ObservableObject {
             return
         }
         
-        let baseUrl = "https://events-au.vercel.app/org/\(userId)//createEvent"
+        let baseUrl = "https://events-au.vercel.app/org/\(userId)/createEvent"
         guard let url = URL(string: baseUrl) else {
             completion(false, "Invalid URL")
             return
