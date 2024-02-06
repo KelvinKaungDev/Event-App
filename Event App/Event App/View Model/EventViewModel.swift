@@ -1,7 +1,7 @@
 import Foundation
 import Alamofire
 
-class EventViewModel {
+class EventViewModel: ObservableObject {
     
     public func fetchEvents(completion: @escaping ([Events]) -> ()) {
         guard let url = URL(string: "https://events-au.vercel.app/event/getAll") else { return }

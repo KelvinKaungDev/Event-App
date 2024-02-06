@@ -6,8 +6,12 @@ import Kingfisher
 import FirebaseAuth
 
 struct HomeView : View {
+    
     @State var searchKeyword:String = ""
     @State var categorySelected:Bool = false
+    @ObservedObject private var userViewModel = UserViewModel()
+    @State private var storedUserId: String = ""
+    @State private var homeViewUsername: String = ""
     
     var body : some View {
         NavigationStack{
@@ -32,10 +36,11 @@ struct HomeView : View {
                                 .foregroundStyle(.white)
                                 .font(.system(size:14))
                                 .fontWeight(.medium)
-                            Text("Patrick Swan")
+                            Text("\(homeViewUsername)")
                                 .foregroundStyle(.white)
-                                .font(.system(size:20))
+                                .font(.system(size: 20))
                                 .fontWeight(.bold)
+                            
                             
                         }// end of VStack
                         .padding(.horizontal,4)
@@ -61,10 +66,29 @@ struct HomeView : View {
                     
                     
                 } //end ofVStack
-               .padding(.vertical)
+                .padding(.vertical)
                 
             }//end of ZStack
         }
+        .onAppear(perform: {
+            if let userId = UserDefaults.standard.string(forKey: "UserID"){
+                print("UserID in UserDefaults: \(userId)")
+                storedUserId = userId
+                userViewModel.fetchSingleUser(userId: userId) { result in
+                    switch result {
+                    case .success(let user):
+                        DispatchQueue.main.async {
+                            self.homeViewUsername = user.username
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }else{
+                print("No UserID found in UserDefaults.")
+                storedUserId = ""
+            }
+        })
         // end of NavigationStack
         .navigationBarBackButtonHidden(true)
     }
