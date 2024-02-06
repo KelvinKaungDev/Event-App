@@ -14,7 +14,6 @@ struct BaseTabHomeView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-                
             HostEventView()
                 .tabItem{
                     Label("Upload", systemImage: "square.and.arrow.up")

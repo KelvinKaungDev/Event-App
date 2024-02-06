@@ -15,14 +15,18 @@ struct Users: Codable {
     let isParticipant: Bool?
     let participatingList, history: [JSONAny]?
     let email: String?
+    let phoneNumber: Int
+    let age: Int
     let eventList: [JSONAny]?
     let createdAt, updatedAt: String?
+    let pendingEventList, participatingEventList, participatedEventList, approvedParticipantList, rejectedParticipantList: [String]?
     let v: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case messageID = "id"
-        case username, firstName, units, isOrganizer, organisingList, isParticipant, participatingList, history, email, eventList, createdAt, updatedAt
+        case username, firstName, units, isOrganizer, organisingList, isParticipant, participatingList, history, email, phoneNumber, age, eventList, createdAt, updatedAt
+        case pendingEventList, participatingEventList, participatedEventList, approvedParticipantList, rejectedParticipantList
         case v = "__v"
     }
 }

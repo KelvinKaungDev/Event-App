@@ -36,7 +36,11 @@
 		393F38912B591946008CCC40 /* UserModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F388F2B591946008CCC40 /* UserModelTest.swift */; };
 		393F38942B59196D008CCC40 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 393F38932B59196D008CCC40 /* Alamofire */; };
 		B31142932B68EA97004C6A16 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31142922B68EA97004C6A16 /* ProfileView.swift */; };
+		B33DEEFA2B6EA6AB00303BC7 /* MyEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DEEF92B6EA6AB00303BC7 /* MyEventsView.swift */; };
+		B33DEEFC2B6EAF6000303BC7 /* HostEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DEEFB2B6EAF6000303BC7 /* HostEventViewModel.swift */; };
+		B33DEEFE2B6F7F0F00303BC7 /* CreateEventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B33DEEFD2B6F7F0F00303BC7 /* CreateEventModel.swift */; };
 		B37762DC2B6AB4C100ED9F00 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B37762DB2B6AB4C100ED9F00 /* Kingfisher */; };
+		B37762DE2B6B55D300ED9F00 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37762DD2B6B55D300ED9F00 /* HeaderView.swift */; };
 		B37B38352B5A4857002404A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37B38342B5A4857002404A1 /* AppDelegate.swift */; };
 		B37B38382B5A4892002404A1 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38372B5A4892002404A1 /* GoogleSignIn */; };
 		B37B383A2B5A4892002404A1 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B37B38392B5A4892002404A1 /* GoogleSignInSwift */; };
@@ -124,6 +128,10 @@
 		393F388E2B591945008CCC40 /* EventModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventModelTest.swift; sourceTree = "<group>"; };
 		393F388F2B591946008CCC40 /* UserModelTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelTest.swift; sourceTree = "<group>"; };
 		B31142922B68EA97004C6A16 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B33DEEF92B6EA6AB00303BC7 /* MyEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventsView.swift; sourceTree = "<group>"; };
+		B33DEEFB2B6EAF6000303BC7 /* HostEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEventViewModel.swift; sourceTree = "<group>"; };
+		B33DEEFD2B6F7F0F00303BC7 /* CreateEventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventModel.swift; sourceTree = "<group>"; };
+		B37762DD2B6B55D300ED9F00 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B37B38342B5A4857002404A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B37B383E2B5A4B2A002404A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B37B38422B5A4B48002404A1 /* Event-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Event-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -258,6 +266,7 @@
 				393F38632B591859008CCC40 /* UserViewModel.swift */,
 				B37B38432B5A4B85002404A1 /* GoogleSignInViewModel.swift */,
 				B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */,
+				B33DEEFB2B6EAF6000303BC7 /* HostEventViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				393F38742B59189B008CCC40 /* EventModel.swift */,
+				B33DEEFD2B6F7F0F00303BC7 /* CreateEventModel.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -367,6 +377,8 @@
 				B31142922B68EA97004C6A16 /* ProfileView.swift */,
 				B37B38532B5A5244002404A1 /* RegistrationView.swift */,
 				B37B384B2B5A4F7A002404A1 /* SignInWithGoogleView.swift */,
+				B37762DD2B6B55D300ED9F00 /* HeaderView.swift */,
+				B33DEEF92B6EA6AB00303BC7 /* MyEventsView.swift */,
 				B7AF3F702B5E1D0A0017E213 /* CategoryView.swift */,
 				B7AF3F722B5E1D160017E213 /* AllCategoryView.swift */,
 			);
@@ -531,6 +543,7 @@
 				B3FABA162B5FF42E0032AA3F /* UserPostViewModel.swift in Sources */,
 				B37B38542B5A5244002404A1 /* RegistrationView.swift in Sources */,
 				393F38372B591641008CCC40 /* ContentView.swift in Sources */,
+				B33DEEFE2B6F7F0F00303BC7 /* CreateEventModel.swift in Sources */,
 				393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */,
 				B7AF3F792B5E1D930017E213 /* EventDetailsView.swift in Sources */,
 				BCB4B31F2B5E3E7400697BEC /* PendingEventView.swift in Sources */,
@@ -547,6 +560,7 @@
 				393F387E2B59189B008CCC40 /* AdminModel.swift in Sources */,
 				B7AF3F7B2B5E1DA70017E213 /* RegisterEventView.swift in Sources */,
 				393F38692B591859008CCC40 /* TutorViewModel.swift in Sources */,
+				B37762DE2B6B55D300ED9F00 /* HeaderView.swift in Sources */,
 				BCB4B3192B5E3E2C00697BEC /* BaseTabHomeView.swift in Sources */,
 				393F38832B59189B008CCC40 /* Constant.swift in Sources */,
 				B7AF3F6F2B5E1CF00017E213 /* SearchBarItemView.swift in Sources */,
@@ -555,6 +569,7 @@
 				B7AF3F7F2B5E1DD80017E213 /* RegisterUnsuccessfulView.swift in Sources */,
 				393F387F2B59189B008CCC40 /* AdminGetOneModel.swift in Sources */,
 				393F386A2B591859008CCC40 /* UnitViewModel.swift in Sources */,
+				B33DEEFC2B6EAF6000303BC7 /* HostEventViewModel.swift in Sources */,
 				B7AF3F6D2B5E1CA60017E213 /* HomeView.swift in Sources */,
 				393F38682B591859008CCC40 /* UserViewModel.swift in Sources */,
 				B7AF3F772B5E1D620017E213 /* AllEventsView.swift in Sources */,
@@ -563,6 +578,7 @@
 				393F387B2B59189B008CCC40 /* UserModel.swift in Sources */,
 				B37B38442B5A4B85002404A1 /* GoogleSignInViewModel.swift in Sources */,
 				393F38842B59189B008CCC40 /* UserPopulateUnitModel.swift in Sources */,
+				B33DEEFA2B6EA6AB00303BC7 /* MyEventsView.swift in Sources */,
 				B37B38352B5A4857002404A1 /* AppDelegate.swift in Sources */,
 				393F38812B59189B008CCC40 /* EventModel.swift in Sources */,
 				B31142932B68EA97004C6A16 /* ProfileView.swift in Sources */,

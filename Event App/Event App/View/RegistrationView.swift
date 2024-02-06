@@ -28,64 +28,11 @@ struct RegistrationView: View {
     @ObservedObject var userPostViewModel = UserPostViewModel()
     @State private var goToSignIn = false
     
+    
+    
     var isFormValid: Bool {
         !firstName.isEmpty && !lastName.isEmpty && !gender.isEmpty && !age.isEmpty && !phoneNumber.isEmpty && selectedUnitId != nil
     }
-    
-//    func createUser(completion: @escaping (Bool) -> Void) {
-//        // API endpoint
-//        let baseUrl = "https://events-au.vercel.app/user/create"
-//        guard let url = URL(string: baseUrl) else {
-//            return
-//        }
-//        let ageInt = Int(age) ?? 0
-//        let phoneNumberInt = Int(phoneNumber) ?? 0
-//        // Prepare the request body
-//        var parameters: [String: Any] = [
-//            "id": authentication.currentUser?.uid ?? "nil",
-//            "username": authentication.currentUser?.displayName ?? "",
-//            "firstName": firstName,
-//            "lastName": lastName,
-//            "units": selectedUnitId,
-//            "gender": gender,
-//            "age": ageInt,
-//            "phoneNumber": phoneNumberInt,
-//            "email": authentication.currentUser?.email ?? ""
-//        ]
-//        
-//        guard let body = try? JSONSerialization.data(withJSONObject: parameters) else {
-//            return
-//        }
-//        
-//        var request = URLRequest(url: url)
-//        request.httpMethod = "POST"
-//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-//        request.httpBody = body
-//        
-//        URLSession.shared.dataTask(with: request) { data, response, error in
-//            DispatchQueue.main.async {
-//                if let error = error {
-//                    print("Error: \(error.localizedDescription)")
-//                    // Handle error
-//                    completion(false)
-//                    return
-//                }
-//                
-//                // Process response
-//                if let httpResponse = response as? HTTPURLResponse {
-//                    print("Status code: \(httpResponse.statusCode)")
-//                    completion(true)
-//                    // Handle status code
-//                }
-//                
-//                if let data = data {
-//                    // Process data if needed
-//                    print("Response data: \(String(data: data, encoding: .utf8) ?? "")")
-//                    completion(false)
-//                }
-//            }
-//        }.resume()
-//    }
     
     var body: some View {
         if goToSignIn{

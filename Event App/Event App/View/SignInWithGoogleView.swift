@@ -15,6 +15,7 @@ struct SignInWithGoogleView: View {
     @State private var isRegistered = false
     @State private var showRegistration = false
     @State private var errorMessage: String? = nil
+//    @ObservedObject private var userViewModel = UserViewModel()
     
     var body: some View {
         VStack {
