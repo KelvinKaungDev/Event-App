@@ -24,7 +24,7 @@ struct K{
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = dateFormatter.date(from: from)!
-        return date
+        let date = dateFormatter.date(from: from)
+        return date ?? Date.now
     }
 }
