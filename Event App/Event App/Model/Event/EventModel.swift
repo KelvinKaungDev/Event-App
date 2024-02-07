@@ -8,7 +8,7 @@ struct EventModel: Codable {
 struct Events: Codable {
     let id, name, description: String
     let units: [String]
-    let date, startTime, endTime: Date
+    let date, startTime, endTime: String
     let location: String
     let rules, comments: [JSONAny]
     let isPending, isCompleted, isApproved, isRejected: Bool
@@ -28,5 +28,7 @@ struct Events: Codable {
         case createdAt, updatedAt
         case v = "__v"
     }
+    
+    
 }
 

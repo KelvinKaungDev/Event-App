@@ -39,7 +39,7 @@ struct EventCardView: View {
                                 .foregroundColor(.black)
                                 .lineLimit(1)
 
-                            Text("\(K.dateformatter(date: event.date))")
+                            Text("\(K.dateformatter(date: K.stringToDate(from: event.date)))")
                                 .font(.system(size:16))
                                 .foregroundColor(.black)
                                 .lineLimit(1)
@@ -65,6 +65,6 @@ struct EventCardView: View {
 
 #Preview {
     EventCardView(
-        event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: Date.now, startTime: Date.now, endTime: Date.now, location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
+        event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: "", startTime: "", endTime:" Date.now", location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
 }
 
