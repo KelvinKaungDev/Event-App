@@ -10,10 +10,10 @@ struct UserPopulateUnitModel: Codable {
 struct PopulateUnit: Codable {
     let id, messageID, username, firstName: String
     let units: [Unit]
-    let isOrganizer: Bool
+//    let isOrganizer: Bool
 //    let createdEventList, organisingList: [JSONAny]
     let createdEventList, organisingList: [String]?
-    let isParticipant: Bool
+//    let isParticipant: Bool
     let participatingList, history: [JSONAny]
     let email: String
     let eventList: [JSONAny]
@@ -23,7 +23,7 @@ struct PopulateUnit: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case messageID = "id"
-        case username, firstName, units, isOrganizer, createdEventList, organisingList, isParticipant, participatingList, history, email, eventList, createdAt, updatedAt
+        case username, firstName, units, createdEventList, organisingList, participatingList, history, email, eventList, createdAt, updatedAt
         case v = "__v"
     }
 }
