@@ -10,7 +10,6 @@ import SwiftUI
 struct SearchBarItemView: View {
     @State private var searchKeyword = ""
     
-    
     var body: some View {
         
         VStack {  
