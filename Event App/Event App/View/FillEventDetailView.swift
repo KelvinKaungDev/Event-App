@@ -172,16 +172,7 @@ struct FillEventDetailView: View {
                         print(eventTitle, venue, participants, dateFormatter.string(from: startDate), dateFormatter.string(from: endDate),timeFormatter.string(from: startTime),timeFormatter.string(from: endTime),desc)
                         // post the created event
                         guard let userId = UserDefaults.standard.string(forKey: "UserID") else {return}
-                        let eventData = postEventData(
-                            name: eventTitle,
-                            units: selectedUnitId,
-                            location: venue,
-                            startTime: startDateStr,
-                            endTime: endDateStr,
-                            description: desc,
-                            creatorId: userId,
-                            organizerList: userId
-                        )
+                        let eventData = postEventData(name: eventTitle, units: selectedUnitId, location: venue, date: startDateStr, startTime: startDateStr, endTime: endDateStr, description: desc, creatorId: userId, organizerList: userId)
                         hostEventViewModel.hostEvent(eventData: eventData) { success in
                             if success {
                                 print("Event successfully hosted")
