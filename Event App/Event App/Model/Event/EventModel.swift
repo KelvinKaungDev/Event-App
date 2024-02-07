@@ -1,4 +1,5 @@
 import Foundation
+
 struct EventModel: Codable {
     let success: Bool
     let message: [Events]
@@ -20,7 +21,7 @@ struct Events: Codable {
     let organizerList: [String]
     let creatorID, createdAt, updatedAt: String
     let v: Int
-
+    
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name, description, units, date, startTime, endTime, location, rules, comments, isPending, isCompleted, isApproved, isRejected, isSuspended, isCancelled, pendingParticipantList, participantList, organizerList
