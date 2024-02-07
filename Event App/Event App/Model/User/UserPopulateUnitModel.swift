@@ -11,7 +11,8 @@ struct PopulateUnit: Codable {
     let id, messageID, username, firstName: String
     let units: [Unit]
     let isOrganizer: Bool
-    let createdEventList, organisingList: [JSONAny]
+//    let createdEventList, organisingList: [JSONAny]
+    let createdEventList, organisingList: [String]?
     let isParticipant: Bool
     let participatingList, history: [JSONAny]
     let email: String
