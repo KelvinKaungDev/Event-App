@@ -37,7 +37,10 @@ struct PendingEventView: View {
                         , alignment: .center
                     )
             }
+            
+
         }
+        
         
     }
 }

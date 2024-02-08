@@ -61,17 +61,13 @@ struct HomeView : View {
                                 .fontWeight(.medium)
                             Text("\(homeViewUsername)")
                                 .foregroundStyle(.white)
-                                .font(.system(size: 20))
+                                .font(.system(size: 16))
                                 .fontWeight(.bold)
                             
                             
                         }// end of VStack
                         .padding(.horizontal,4)
                         Spacer()
-                        Image(systemName: "bell.fill")
-                            .foregroundStyle(.white)
-                            .font(.system(size:25))
-                        
                     } .padding()
                 }
                 
