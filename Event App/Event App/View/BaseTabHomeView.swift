@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct BaseTabHomeView: View {
+//    @Binding var selectedIndex: Int
     var body: some View {
         TabView{
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+//                .tag($selectedIndex)
             HostEventView()
                 .tabItem{
                     Label("Upload", systemImage: "square.and.arrow.up")

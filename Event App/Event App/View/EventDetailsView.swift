@@ -56,7 +56,7 @@ struct EventDetailsView: View {
             } //end of Scroll View
             .padding(.horizontal)
             
-            NavigationLink(destination:RegisterEventView()){
+            NavigationLink(destination:RegisterEventView(event: $event)){
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundStyle(.red.opacity(0.8))
                     .frame(width:360,height:60)

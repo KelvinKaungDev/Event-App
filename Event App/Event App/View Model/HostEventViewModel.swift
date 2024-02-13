@@ -14,13 +14,13 @@ class HostEventViewModel: ObservableObject {
     
     func hostEvent(eventData: postEventData, completion: @escaping (Bool) -> Void) {
             
-            let headers: HTTPHeaders = [
-                .contentType("application/json")
-            ]
-            
-            guard let userId = UserDefaults.standard.string(forKey: "UserID") else { return }
-            guard let url = URL(string: "https://events-au.vercel.app/org/\(userId)/createEvent") else { return }
-            
+        let headers: HTTPHeaders = [
+            .contentType("application/json")
+        ]
+        
+        guard let userId = UserDefaults.standard.string(forKey: "UserID") else { return }
+        guard let url = URL(string: "https://events-au.vercel.app/org/\(userId)/createEvent") else { return }
+        
         AF.request(url, method: .post, parameters: eventData, encoder: JSONParameterEncoder.default, headers: headers).response { response in
                 debugPrint(response)
                 

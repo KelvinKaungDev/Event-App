@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AllEventsViews: View {
+    @State var isLoading = false
     let columns = [
         GridItem(.adaptive(minimum: 165))
     ]
@@ -25,34 +26,51 @@ struct AllEventsViews: View {
         NavigationStack {
             ScrollView(.vertical,showsIndicators: false) {
                 ZStack{
+                    if isLoading {
+                        ProgressView("Loading...")
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .tint(.white)
+                            .padding()
+                            .foregroundStyle(.white)
+                    } else{
                     LazyVGrid(columns: columns, spacing: 120) {
-                    
+                        
                         ForEach(filteredEvents, id: \.id) { event in
+                            if event.isPending == false{
                                 EventCardView(event: .constant(event))
+                            }
                         }
-                    
+                        
                         
                     }
+                    .searchable(text: $searchTerm, prompt: "Search Events")}
                     
                 }
                 .padding(.bottom,70)
                 .padding(.top,60)
             }
-            .searchable(text: $searchTerm, prompt: "Search Events")
         }
         .onAppear(perform: {
-            eventvm.fetchEvents { result in
-                switch result{
-                case .success(let events):
-                    self.events = events
-                case .failure(let error):
-                    print(error)
-                }
-            
-            }
+            isLoading = true
+            fetchEventData()
         })
+//        .onAppear(perform: {
+//            
+//        })
         
         
+    }
+    func fetchEventData(){
+        eventvm.fetchEvents { result in
+            isLoading = false
+            switch result{
+            case .success(let events):
+                self.events = events
+            case .failure(let error):
+                print(error)
+            }
+        
+        }
     }
 }
 
