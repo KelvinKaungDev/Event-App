@@ -199,6 +199,7 @@ struct FillEventDetailView: View {
                             )
                     }
                 }
+//                NavigationLink(destination: PendingEventView(), label: <#T##() -> Label#>)
             }
             .padding()
             .navigationTitle("Fill Event Details")

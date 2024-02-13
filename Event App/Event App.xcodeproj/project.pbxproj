@@ -78,6 +78,7 @@
 		BCB4B31D2B5E3E5E00697BEC /* FillEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */; };
 		BCB4B31F2B5E3E7400697BEC /* PendingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31E2B5E3E7400697BEC /* PendingEventView.swift */; };
 		BCB4B3212B5E3EAB00697BEC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */; };
+		BCBAC1152B7BD75A00FAF04C /* UserJoinEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBAC1142B7BD75A00FAF04C /* UserJoinEventViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +159,7 @@
 		BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillEventDetailView.swift; sourceTree = "<group>"; };
 		BCB4B31E2B5E3E7400697BEC /* PendingEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingEventView.swift; sourceTree = "<group>"; };
 		BCB4B3202B5E3EAB00697BEC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		BCBAC1142B7BD75A00FAF04C /* UserJoinEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJoinEventViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +271,7 @@
 				B37B38432B5A4B85002404A1 /* GoogleSignInViewModel.swift */,
 				B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */,
 				B33DEEFB2B6EAF6000303BC7 /* HostEventViewModel.swift */,
+				BCBAC1142B7BD75A00FAF04C /* UserJoinEventViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				B3FABA162B5FF42E0032AA3F /* UserPostViewModel.swift in Sources */,
 				B37B38542B5A5244002404A1 /* RegistrationView.swift in Sources */,
 				393F38372B591641008CCC40 /* ContentView.swift in Sources */,
+				BCBAC1152B7BD75A00FAF04C /* UserJoinEventViewModel.swift in Sources */,
 				B33DEEFE2B6F7F0F00303BC7 /* CreateEventModel.swift in Sources */,
 				393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */,
 				B7AF3F792B5E1D930017E213 /* EventDetailsView.swift in Sources */,

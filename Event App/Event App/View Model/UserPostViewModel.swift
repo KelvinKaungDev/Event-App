@@ -21,7 +21,7 @@ class UserPostViewModel: ObservableObject {
         let phoneNumberInt = Int(phoneNumber) ?? 0
 
         // Prepare the request body
-        var parameters: [String: Any] = [
+        let parameters: [String: Any] = [
             "id": authentication.currentUser?.uid ?? "nil",
             "username": authentication.currentUser?.displayName ?? "",
             "firstName": firstName,
