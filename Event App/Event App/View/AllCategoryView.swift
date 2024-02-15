@@ -23,11 +23,7 @@ struct AllCategoryView: View {
             HStack(spacing:-20){
                 ForEach(categories, id:(\.id)){ category in
                     CategoryView(categorySelected: false, categories: category)
-                    
-                    
-                }
-                
-                
+                }          
             }
         }
     }
