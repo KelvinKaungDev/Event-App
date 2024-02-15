@@ -12,6 +12,7 @@ struct HomeView : View {
     @ObservedObject private var userViewModel = UserViewModel()
     @State private var storedUserId: String = ""
     @State private var homeViewUsername: String = ""
+    
     init(){
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black

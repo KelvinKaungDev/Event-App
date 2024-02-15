@@ -25,6 +25,56 @@ struct MyEventsView: View {
                     .padding()
                 }
                 .tint(.black)
+                NavigationLink(destination: OrganizingEventListView().navigationTitle("Organizing Events")) {
+                    HStack{
+                        Image(systemName: "figure.2.arms.open")
+                        Text("Organizing Events")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding()
+                }
+                .tint(.black)
+                NavigationLink(destination: OrganizedEventListView().navigationTitle("Organized Events")) {
+                    HStack{
+                        Image(systemName: "checkmark.gobackward")
+                        Text("Organized Events")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding()
+                }
+                .tint(.black)
+                NavigationLink(destination: PendingEventView().navigationTitle("Pending Events")) {
+                    HStack{
+                        Image(systemName: "timer")
+                        Text("Pending Events")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding()
+                }
+                .tint(.black)
+                NavigationLink(destination: ParticipatingEventListView().navigationTitle("Participating Events")) {
+                    HStack{
+                        Image(systemName: "figure.socialdance")
+                        Text("Paticipating Events")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding()
+                }
+                .tint(.black)
+                NavigationLink(destination: ParticipatedEventListView().navigationTitle("Participated Events")) {
+                    HStack{
+                        Image(systemName: "door.left.hand.open")
+                        Text("Participated Events")
+                        Spacer()
+                        Image(systemName: "arrow.right")
+                    }
+                    .padding()
+                }
+                .tint(.black)
             }
         }
     }

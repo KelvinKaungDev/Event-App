@@ -55,7 +55,7 @@ struct AllEventsViews: View {
             fetchEventData()
         })
 //        .onAppear(perform: {
-//            
+//
 //        })
         
         
@@ -73,6 +73,7 @@ struct AllEventsViews: View {
         }
     }
 }
+
 
 #Preview {
     AllEventsViews()

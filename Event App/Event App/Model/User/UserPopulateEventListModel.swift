@@ -12,7 +12,7 @@ struct PopulateEventList: Codable {
     let units: [String]
 //    let isOrganizer: Bool
 //    let createdEventList, organisingList: [JSONAny]
-    let createdEventList, organisingEventList: [Events]?
+    let createdEventList, organisingEventList, organizedEventList, pendingEventList, participatingEventList, participatedEventList: [Events]?
 //    let isParticipant: Bool
 //    let participatingEventList, history: [JSONAny]
     let email: String
@@ -23,7 +23,7 @@ struct PopulateEventList: Codable {
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case messageID = "id"
-        case username, firstName, units, createdEventList, organisingEventList, email, createdAt, updatedAt
+        case username, firstName, units, createdEventList, organisingEventList, organizedEventList, pendingEventList, participatingEventList, participatedEventList, email, createdAt, updatedAt
         case v = "__v"
     }
 }
