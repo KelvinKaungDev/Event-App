@@ -17,6 +17,7 @@ struct RegisterEventView: View {
     @State private var gender: String = ""
     @State private var faculty: String = ""
     @State private var question: String = ""
+    @State var userJoinVM = UserJoinEventViewModel()
     
 //    @ObservableObject var 
     
@@ -53,7 +54,10 @@ struct RegisterEventView: View {
                 .shadow(color:.gray,radius: 5,x:5,y:5)
                 .overlay(
                     Button(action: {
-                        
+                        print("some")
+                        if let userId = UserDefaults.standard.string(forKey: "UserID"){
+                            userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+                        }
                     }, label: {
                         Text("Register Now")
                             .bold()
