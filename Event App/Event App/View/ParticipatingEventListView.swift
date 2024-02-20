@@ -14,14 +14,26 @@ struct ParticipatingEventListView: View {
     @State var participatingEventList: [Events] = []
     
     var body: some View {
-        List(participatingEventList, id: \.id) { event in
-            VStack(alignment: .leading) {
-                Text(event.name)
-                    .font(.headline)
-                Text(event.description)
-                    .font(.subheadline)
+        
+        
+        
+        ScrollView(.horizontal,showsIndicators: false){
+            HStack(spacing:15){
+                ForEach(participatingEventList, id:\.id) { event in
+                    EventCardView(event: .constant(event))
+                }
             }
         }
+        
+        
+//        List(participatingEventList, id: \.id) { event in
+//            VStack(alignment: .leading) {
+//                Text(event.name)
+//                    .font(.headline)
+//                Text(event.description)
+//                    .font(.subheadline)
+//            }
+//        }
         .onAppear {
             if let userId = UserDefaults.standard.string(forKey: "UserID"){
                 storedUserId = userId
