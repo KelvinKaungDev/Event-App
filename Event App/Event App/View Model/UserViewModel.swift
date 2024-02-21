@@ -25,6 +25,7 @@ import Combine
             case .success(let userData):
                 completion(.success(userData.message))
             case .failure(let userFetcherror):
+                print(userFetcherror.localizedDescription)
                 completion(.failure(userFetcherror))
             }
         }

@@ -15,12 +15,11 @@ struct BaseTabHomeView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-//                .tag($selectedIndex)
             HostEventView()
                 .tabItem{
                     Label("Upload", systemImage: "square.and.arrow.up")
                 }
-            NewProfileView()
+            MainProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }

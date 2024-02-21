@@ -85,7 +85,7 @@ struct HomeView : View {
                             self.homeViewUsername = user.username
                         }
                     case .failure(let error):
-                        print(error)
+                        print(error.localizedDescription)
                     }
                 }
             }else{
