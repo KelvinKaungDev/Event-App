@@ -63,7 +63,7 @@ struct OnboardingView: View {
                         onboardingSteps[currentStep].title
                             .offset(x: -30)
                         HStack{
-                            ForEach(0..<onboardingSteps.count){ it in
+                            ForEach(0..<onboardingSteps.count, id: \.self){ it in
                                 if it == currentStep{
                                     Rectangle()
                                         .frame(width: 20, height: 10)
