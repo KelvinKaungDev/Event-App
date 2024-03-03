@@ -35,9 +35,10 @@ struct RegisteredSuccessView: View {
             Button(action: {
                 path.removeAll()
             }, label: {
-                Text("Go to root")
-            })
+                Text("Go to Main Menu")
+            }).buttonStyle(.borderedProminent)
         } // end of VStack
+        .padding(.horizontal, 20)
         .navigationBarHidden(true)
     }
 }

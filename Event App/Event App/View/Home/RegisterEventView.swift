@@ -19,6 +19,7 @@ struct RegisterEventView: View {
     @State private var faculty: String = ""
     @State private var question: String = ""
     @State var userJoinVM = UserJoinEventViewModel()
+    @State var showAlert = false
     
 //    @ObservableObject var 
     
@@ -48,29 +49,50 @@ struct RegisterEventView: View {
         }
         .accentColor(.red)
         
-//        NavigationLink(value: "success", label: {
-//            Text("GO")
-//        })
-        .navigationTitle("Fill Your Informaton")
         
-        NavigationLink(value: "success", label: {
-            Text("Register")
-        })
-        .onTapGesture {
-            print("some")
+//        NavigationLink(value: "success", label: {
+//            Text("Register")
+//                .onTapGesture {
+//                    print("some")
+//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
+//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+//                    }
+//                }
+//
+//        })
+//            
+        
+        Button(action: {
+            print("Register success")
             if let userId = UserDefaults.standard.string(forKey: "UserID"){
                 userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
             }
+            showAlert.toggle()
+        }, label: {
+            Text("Register Event")
+        })
+        .alert("Event Registration Success", isPresented: $showAlert) {
+            NavigationLink(value: "success") {
+                Text("OK")
+            }
         }
-
 //        NavigationLink {
-//            RegisteredSuccessView()
+//            RegisteredSuccessView(path: $path)
 //        } label: {
-//            Text("GO")
+//            Text("Register")
+//                .onTapGesture {
+//                    print("some")
+//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
+//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+//                    }
+//                }
 //        }
+        
+        
+       
+        
+        .navigationTitle("Fill Your Informaton")
 
-        
-        
     }
     
 }
