@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterEventView: View {
     @Binding var event: Events
+    @Binding var path: [String]
     let formModel = FormModel()
     @State private var fullName: String = ""
     @State private var nickName: String = ""
@@ -18,6 +19,7 @@ struct RegisterEventView: View {
     @State private var faculty: String = ""
     @State private var question: String = ""
     @State var userJoinVM = UserJoinEventViewModel()
+    @State var showAlert = false
     
 //    @ObservableObject var 
     
@@ -46,34 +48,56 @@ struct RegisterEventView: View {
             
         }
         .accentColor(.red)
-        .navigationTitle("Fill Your Informaton")
-        NavigationLink(destination: RegisteredSuccessView()){
-            RoundedRectangle(cornerRadius: 30)
-                .foregroundStyle(.red.opacity(0.8))
-                .frame(width:360,height:60)
-                .shadow(color:.gray,radius: 5,x:5,y:5)
-                .overlay(
-                    Button(action: {
-                        print("some")
-                        if let userId = UserDefaults.standard.string(forKey: "UserID"){
-                            userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
-                        }
-                    }, label: {
-                        Text("Register Now")
-                            .bold()
-                            .foregroundStyle(.white)
-                    })
-                    
-                    
-                )
+        
+        
+//        NavigationLink(value: "success", label: {
+//            Text("Register")
+//                .onTapGesture {
+//                    print("some")
+//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
+//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+//                    }
+//                }
+//
+//        })
+//            
+        
+        Button(action: {
+            print("Register success")
+            if let userId = UserDefaults.standard.string(forKey: "UserID"){
+                userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+            }
+            showAlert.toggle()
+        }, label: {
+            Text("Register Event")
+        })
+        .alert("Event Registration Success", isPresented: $showAlert) {
+            NavigationLink(value: "success") {
+                Text("OK")
+            }
         }
+//        NavigationLink {
+//            RegisteredSuccessView(path: $path)
+//        } label: {
+//            Text("Register")
+//                .onTapGesture {
+//                    print("some")
+//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
+//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
+//                    }
+//                }
+//        }
         
         
+       
+        
+        .navigationTitle("Fill Your Informaton")
+
     }
     
 }
 
-#Preview {
-    RegisterEventView(event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: "", startTime: "", endTime:" Date.now", location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
-}
-
+//#Preview {
+//    RegisterEventView(event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: "", startTime: "", endTime:" Date.now", location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
+//}
+//

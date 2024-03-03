@@ -6,7 +6,7 @@ struct EventModel: Codable {
 }
 
 // MARK: - Message
-struct Events: Codable {
+struct Events: Codable{
     let id, name, description: String
     let units: [String]
     let date, startTime, endTime: String
