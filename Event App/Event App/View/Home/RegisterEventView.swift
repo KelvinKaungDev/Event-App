@@ -48,7 +48,7 @@ struct RegisterEventView: View {
         .accentColor(.red)
         .navigationTitle("Fill Your Informaton")
         NavigationLink(destination: RegisteredSuccessView()){
-            RoundedRectangle(cornerRadius: 30)
+            RoundedRectangle(cornerRadius: 10)
                 .foregroundStyle(.red.opacity(0.8))
                 .frame(width:360,height:60)
                 .shadow(color:.gray,radius: 5,x:5,y:5)

@@ -64,9 +64,7 @@
 		B3FABA162B5FF42E0032AA3F /* UserPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */; };
 		B7350ADE2B83110F007BA6CE /* AllPendingParticipantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7350ADD2B83110F007BA6CE /* AllPendingParticipantsView.swift */; };
 		B7AF3F6D2B5E1CA60017E213 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */; };
-		B7AF3F6F2B5E1CF00017E213 /* SearchBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */; };
 		B7AF3F752B5E1D3A0017E213 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F742B5E1D3A0017E213 /* EventCardView.swift */; };
-		B7AF3F772B5E1D620017E213 /* AllEventsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F762B5E1D620017E213 /* AllEventsView.swift */; };
 		B7AF3F792B5E1D930017E213 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F782B5E1D930017E213 /* EventDetailsView.swift */; };
 		B7AF3F7B2B5E1DA70017E213 /* RegisterEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F7A2B5E1DA70017E213 /* RegisterEventView.swift */; };
 		B7AF3F7D2B5E1DC10017E213 /* RegisteredSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7AF3F7C2B5E1DC10017E213 /* RegisteredSuccessView.swift */; };
@@ -148,9 +146,7 @@
 		B3FABA152B5FF42E0032AA3F /* UserPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostViewModel.swift; sourceTree = "<group>"; };
 		B7350ADD2B83110F007BA6CE /* AllPendingParticipantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPendingParticipantsView.swift; sourceTree = "<group>"; };
 		B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarItemView.swift; sourceTree = "<group>"; };
 		B7AF3F742B5E1D3A0017E213 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
-		B7AF3F762B5E1D620017E213 /* AllEventsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsView.swift; sourceTree = "<group>"; };
 		B7AF3F782B5E1D930017E213 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		B7AF3F7A2B5E1DA70017E213 /* RegisterEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEventView.swift; sourceTree = "<group>"; };
 		B7AF3F7C2B5E1DC10017E213 /* RegisteredSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredSuccessView.swift; sourceTree = "<group>"; };
@@ -385,8 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				B7AF3F6C2B5E1CA60017E213 /* HomeView.swift */,
-				B7AF3F6E2B5E1CF00017E213 /* SearchBarItemView.swift */,
-				B7AF3F762B5E1D620017E213 /* AllEventsView.swift */,
 				B7AF3F742B5E1D3A0017E213 /* EventCardView.swift */,
 				B7AF3F782B5E1D930017E213 /* EventDetailsView.swift */,
 				B7AF3F7A2B5E1DA70017E213 /* RegisterEventView.swift */,
@@ -613,7 +607,6 @@
 				393F38692B591859008CCC40 /* TutorViewModel.swift in Sources */,
 				BCB4B3192B5E3E2C00697BEC /* BaseTabHomeView.swift in Sources */,
 				393F38832B59189B008CCC40 /* Constant.swift in Sources */,
-				B7AF3F6F2B5E1CF00017E213 /* SearchBarItemView.swift in Sources */,
 				BC463EA42B85129500795FCF /* SingleEventModel.swift in Sources */,
 				B7AF3F752B5E1D3A0017E213 /* EventCardView.swift in Sources */,
 				B7AF3F7D2B5E1DC10017E213 /* RegisteredSuccessView.swift in Sources */,
@@ -624,7 +617,6 @@
 				B33DEEFC2B6EAF6000303BC7 /* HostEventViewModel.swift in Sources */,
 				B7AF3F6D2B5E1CA60017E213 /* HomeView.swift in Sources */,
 				393F38682B591859008CCC40 /* UserViewModel.swift in Sources */,
-				B7AF3F772B5E1D620017E213 /* AllEventsView.swift in Sources */,
 				B30620DB2B7E73760004A4D6 /* ParticipatedEventListView.swift in Sources */,
 				B3CACA422B73362C006B3B70 /* CreatedEventListView.swift in Sources */,
 				393F387B2B59189B008CCC40 /* UserModel.swift in Sources */,
