@@ -31,7 +31,7 @@ struct RegisteredSuccessView: View {
                             .foregroundStyle(.white))
             }
                 
-        } // end pf VStack
+        } // end of VStack
         .navigationBarHidden(true)
     }
 }
