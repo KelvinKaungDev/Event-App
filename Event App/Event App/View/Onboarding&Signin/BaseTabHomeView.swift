@@ -10,19 +10,22 @@ import SwiftUI
 struct BaseTabHomeView: View {
 //    @Binding var selectedIndex: Int
     var body: some View {
-        TabView{
+        TabView(){
             HomeView()
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag(0)
             HostEventView()
                 .tabItem{
                     Label("Upload", systemImage: "square.and.arrow.up")
                 }
+                .tag(1)
             MainProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.crop.circle")
                 }
+                .tag(2)
         }
         .navigationBarBackButtonHidden()
         
@@ -30,6 +33,6 @@ struct BaseTabHomeView: View {
     }
 }
 
-#Preview {
-    BaseTabHomeView()
-}
+//#Preview {
+//    BaseTabHomeView()
+//}

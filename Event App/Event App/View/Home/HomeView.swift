@@ -7,6 +7,7 @@ import FirebaseAuth
 
 struct HomeView : View {
     
+    @State private var navPath: [String] = []
     @State var searchKeyword:String = ""
     @State var categorySelected:Bool = false
     @ObservedObject private var userViewModel = UserViewModel()
@@ -28,13 +29,14 @@ struct HomeView : View {
         return events!.filter {$0.name.localizedCaseInsensitiveContains(searchTerm)}
     }
     
+    
     init(){
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = .white
         UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).tintColor = .black
     }
     
     var body : some View {
-        NavigationStack{
+        NavigationStack(path: $navPath){
             ZStack{
                 GeometryReader{ geometry in
                     Path { path in
@@ -92,8 +94,8 @@ struct HomeView : View {
                 }
                 
             }
-            
-            .navigationBarBackButtonHidden(true)
+
+            .navigationBarBackButtonHidden()
 
         }
         .onAppear(perform: {
@@ -127,8 +129,6 @@ struct HomeView : View {
 }
 
 extension HomeView{
-    
-    
     private var allEventsView: some View{
         ScrollView(.vertical,showsIndicators: false) {
             ZStack{
@@ -143,7 +143,8 @@ extension HomeView{
                         
                         ForEach(filteredEvents, id: \.id) { event in
                             if event.isPending == false{
-                                EventCardView(event: .constant(event))
+//                                EventCardView(event: .constant(event))
+                                eventCard(event: event)
                             }
                         }
                     }
@@ -168,6 +169,67 @@ extension HomeView{
                 print(error)
             }
         
+        }
+    }
+    
+    
+}
+
+extension HomeView{
+    @ViewBuilder
+    func eventCard(event: Events) -> some View{
+        NavigationLink(value: "event", label: {
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .foregroundColor(.white)
+                    .shadow(color:.gray,radius: 5,x:5,y:5)
+                VStack {
+                    Image("swiftuihackathon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 165, height: 120)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .offset(y:-20)
+                    
+                    // Text Overlay
+                    
+                    VStack(alignment:.leading,spacing:10){
+                        Text("\(event.name)")
+                            .font(.system(size:20))
+                            .foregroundColor(.black)
+                            .bold()
+                            .lineLimit(3)
+                            .offset(y:-10)
+                        
+                        Text("\(event.location)")
+                            .font(.system(size:16))
+                            .foregroundColor(.black)
+                            .lineLimit(1)
+                        
+                        Text("\(K.dateformatter(date: K.stringToDate(from: event.date)))")
+                            .font(.system(size:16))
+                            .foregroundColor(.black)
+                            .lineLimit(1)
+                        
+                    }
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.leading)
+                    .padding()
+                }
+            } // end of ZStack
+            .frame(width: 165, height: 200)
+        })
+
+        .navigationDestination(for: String.self) { value in
+            if value == "event"{
+                EventDetailsView(event: .constant(event), path: $navPath)
+            }
+            if value == "register"{
+                RegisterEventView(event: .constant(event), path: $navPath)
+            }
+            if value == "success"{
+                RegisteredSuccessView(path: $navPath)
+            }
         }
     }
 }
