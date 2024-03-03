@@ -35,9 +35,6 @@ class UserJoinEventViewModel: Observable{
             }
         }
         task.resume()
-        
-            
-        
     }
     
     func updateData(parameters : [String : Any], id : String) {
