@@ -92,17 +92,16 @@ struct MainProfileView: View {
                             .padding([.bottom, .trailing], 4)
                     }
                     
-                    Text("Austin Xu")
+                    Text(Auth.auth().currentUser?.displayName ?? "No Username Found")
                         .font(.system(size: 25, weight: .semibold))
                         .foregroundStyle(.white)
                         .padding(.vertical)
-                    
                         
                     RoundedRectangle(cornerRadius: 20)
                         .frame(width: 200, height: 50)
                         .foregroundStyle(Color("customPink").opacity(0.6))
                         .overlay(
-                            Text("u6530069@au.edu")
+                            Text(Auth.auth().currentUser?.email ?? "No Email Found")
                                 .foregroundStyle(.white)
                                 .tint(.white)
                         )
