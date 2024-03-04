@@ -22,7 +22,7 @@ struct HostEventView: View {
                     .font(.system(size: 12))
                     .padding()
                     .foregroundColor(Color("text_color_grey"))
-                NavigationLink(destination: FillEventDetailView()) {
+                NavigationLink(value: "fillEventDetail") {
                     RoundedRectangle(cornerRadius: 50)
                         .fill(
                             LinearGradient(
@@ -39,6 +39,12 @@ struct HostEventView: View {
                         )
                 }
                     
+            }
+            
+            .navigationDestination(for: String.self) { value in
+                if value == "fillEventDetail"{
+                    FillEventDetailView()
+                }
             }
         }
         

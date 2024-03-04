@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BaseTabHomeView: View {
-//    @Binding var selectedIndex: Int
     var body: some View {
         TabView(){
             HomeView()
@@ -33,6 +32,6 @@ struct BaseTabHomeView: View {
     }
 }
 
-//#Preview {
-//    BaseTabHomeView()
-//}
+#Preview {
+    BaseTabHomeView()
+}
