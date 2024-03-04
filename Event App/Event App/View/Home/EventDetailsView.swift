@@ -14,7 +14,6 @@ struct EventDetailsView: View {
     
     var body: some View {
         
-//        VStack(alignment:.center,spacing:15){
         ScrollView(.vertical,showsIndicators: true){
             Image("swiftuihackathon")
                 .resizable()
@@ -56,18 +55,8 @@ struct EventDetailsView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal,20)
             
-//            NavigationLink(destination:RegisterEventView(event: $event, path: $path)){
-//                RoundedRectangle(cornerRadius: 30)
-//                    .foregroundStyle(.red.opacity(0.8))
-//                    .frame(width:300,height:50)
-//                    .padding()
-//                    .shadow(color:.gray,radius: 5,x:5,y:5)
-//                    .overlay(
-//                        Text("Register Now")
-//                            .bold()
-//                            .foregroundStyle(.white))
-//            }
-            NavigationLink(value: "register") {
+
+            NavigationLink(value: "registerEvent-\(event.id)") {
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundStyle(.red.opacity(0.8))
                     .frame(width:300,height:50)
@@ -81,11 +70,10 @@ struct EventDetailsView: View {
             }
             
         } //end of Scroll View
-//        .navigationDestination(for: String.self, destination: { value in
-//            RegisterEventView(event: $event, path: $path)
-//        })
-//        
 
+        .onAppear(perform: {
+            print(event.id)
+        })
         .navigationTitle("Event Details")
         
     }
@@ -99,3 +87,15 @@ struct EventDetailsView: View {
 //    }
 //}
 
+
+//            NavigationLink(destination:RegisterEventView(event: $event, path: $path)){
+//                RoundedRectangle(cornerRadius: 30)
+//                    .foregroundStyle(.red.opacity(0.8))
+//                    .frame(width:300,height:50)
+//                    .padding()
+//                    .shadow(color:.gray,radius: 5,x:5,y:5)
+//                    .overlay(
+//                        Text("Register Now")
+//                            .bold()
+//                            .foregroundStyle(.white))
+//            }

@@ -33,3 +33,16 @@ struct Events: Codable{
     
 }
 
+
+extension Events: Hashable {
+    static func == (lhs: Events, rhs: Events) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        // Add any other properties you consider essential for uniqueness
+        // For complex properties that don't easily conform to Hashable, you might exclude them
+        // or find a simple representative value to hash.
+    }
+}

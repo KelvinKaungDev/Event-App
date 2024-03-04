@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RegisterEventView: View {
-    @Binding var event: Events
     @Binding var path: [String]
+    var event: Events
+    
     let formModel = FormModel()
     @State private var fullName: String = ""
     @State private var nickName: String = ""
@@ -20,9 +21,7 @@ struct RegisterEventView: View {
     @State private var question: String = ""
     @State var userJoinVM = UserJoinEventViewModel()
     @State var showAlert = false
-    
-//    @ObservableObject var 
-    
+        
     var body: some View {
         Form{
             Section("Personal Information") {
@@ -49,19 +48,6 @@ struct RegisterEventView: View {
         }
         .accentColor(.red)
         
-        
-//        NavigationLink(value: "success", label: {
-//            Text("Register")
-//                .onTapGesture {
-//                    print("some")
-//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
-//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
-//                    }
-//                }
-//
-//        })
-//            
-        
         Button(action: {
             print("Register success")
             if let userId = UserDefaults.standard.string(forKey: "UserID"){
@@ -76,20 +62,6 @@ struct RegisterEventView: View {
                 Text("OK")
             }
         }
-//        NavigationLink {
-//            RegisteredSuccessView(path: $path)
-//        } label: {
-//            Text("Register")
-//                .onTapGesture {
-//                    print("some")
-//                    if let userId = UserDefaults.standard.string(forKey: "UserID"){
-//                        userJoinVM.userJoinEvent(userId: userId, eventId: event.id)
-//                    }
-//                }
-//        }
-        
-        
-       
         
         .navigationTitle("Fill Your Informaton")
 
