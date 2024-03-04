@@ -8,25 +8,20 @@
 import SwiftUI
 
 struct OrganisingEventListView: View {
-    @Binding var organisingEventList: [String]
+    @Binding var organisingEventList: [EventList]
     @State var pendingParticipants: [String] = []
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State private var eventNames: [String:String] = [:]
     
     var body: some View {
-        if organisingEventList == []{
+        if organisingEventList.isEmpty{
             Text("You're not Organising any events")
         } else{
-            List(organisingEventList, id: \.self){ eventId in
-                if let eventName = eventNames[eventId]{
-                    OrganisingEventRow(eventName: eventName, eventId: eventId, pendingParticipants: pendingParticipants)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventNames(eventId: eventId)
-                        }
-                }
+            List(organisingEventList){ event in
+//                    OrganisingEventRow(eventName: eventName, eventId: eventId, pendingParticipants: pendingParticipants)
+                OrganisingEventRow(eventName: event.name, eventId: event.id)
+                
             }//End of List
             .navigationTitle("Organising Event List")
             
@@ -56,26 +51,10 @@ struct OrganisingEventRow: View{
     
     var eventName: String
     var eventId: String
-    @State var pendingParticipants: [String]
+    @State var pendingParticipants: [String] = []
         
     var body: some View{
         Section{
-//            NavigationLink(value: eventId){
-//                HStack{
-//                    Image(systemName: "rectangle.3.group.bubble")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 50)
-//                    VStack(alignment: .leading){
-//                        Text(eventName)
-//                        Text("Description")
-//                    }.padding(.horizontal)
-//                }
-//                .padding()
-//            }
-//            .navigationDestination(for: String.self) { value in
-//                AllPendingParticipantsView(pendingParticipantData: self.$pendingParticipants)
-//            }
             NavigationLink {
                 AllPendingParticipantsView(pendingParticipantData: self.$pendingParticipants)
             } label: {
@@ -91,14 +70,10 @@ struct OrganisingEventRow: View{
                 }
                 .padding()
             }
-
-            
-            
-
         }
     }
 }
 
-#Preview {
-    OrganisingEventListView(organisingEventList: .constant(["65892817969238ac81d637b6"]))
-}
+//#Preview {
+//    OrganisingEventListView(organisingEventList: .constant(["65892817969238ac81d637b6"]))
+//}

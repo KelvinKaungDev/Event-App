@@ -6,86 +6,19 @@
 //
 import SwiftUI
 
-//struct CreatedEventListView: View {
-//    
-//    @ObservedObject var viewModel = UserViewModel.shared
-//    @ObservedObject var eventsViewModel = EventViewModel()
-//    @State private var storedUserId: String = ""
-//    @State var createdEventList: [Events] = []
-//    
-//    var body: some View {
-//        
-//        
-//        
-//        ScrollView(.horizontal,showsIndicators: false){
-//            HStack(spacing:15){
-//                ForEach(createdEventList, id:\.id) { event in
-//                    EventCardView(event: .constant(event))
-//                }
-//            }
-//        }
-//        
-//        
-//        
-//        
-//        
-//        
-//        
-////        List(createdEventList, id: \.id) { event in
-////            VStack(alignment: .leading) {
-////                Text(event.name)
-////                    .font(.headline)
-////                Text(event.description)
-////                    .font(.subheadline)
-////            }
-////        }
-//        .onAppear {
-//            if let userId = UserDefaults.standard.string(forKey: "UserID"){
-//                storedUserId = userId
-//                //                    DispatchQueue.main.async {
-//                //                        eventsViewModel.loadEvents(userId: userId)
-//                viewModel.fetchUserPopulateEventList(userId: userId) { result in
-//                    DispatchQueue.main.async {
-//                        switch result {
-//                        case .success(let populateEventList):
-//                            self.createdEventList = populateEventList.createdEventList ?? []
-//                        case .failure(let error):
-//                            print(error)
-//                        }
-//                    }
-//                }
-//                //                    }
-//            } else {
-//                print("Error gg HAS")
-//            }
-//        }
-//    }
-//}
-//
-//
-//#Preview {
-//    CreatedEventListView()
-//}
-
 struct CreatedEventListView: View {
-    @Binding var createdEventList: [String]
+    @Binding var createdEventList: [EventList]
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State var eventNames: [String: String] = [:]
 
     var body: some View {
-        if createdEventList == [] {
+        if createdEventList.isEmpty{
             Text("You haven't created any events")
         } else {
-            List(createdEventList, id: \.self){ eventId in
-                if let eventName = eventNames[eventId]{
-                    CreatedEventListRow(eventName: eventName)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventName(eventId: eventId)
-                        }
-                }
+            List(createdEventList){ event in
+                CreatedEventListRow(eventName: event.name)
+               
             }
             .navigationTitle("Created Event List")
             
@@ -128,8 +61,8 @@ struct CreatedEventListRow: View{
         }
     }
 }
-
-#Preview {
-    CreatedEventListView(createdEventList: .constant(["6589b7eeb1549b810c5a7542"]))
-}
-
+//
+//#Preview {
+//    CreatedEventListView(createdEventList: .constant(["6589b7eeb1549b810c5a7542"]))
+//}
+//

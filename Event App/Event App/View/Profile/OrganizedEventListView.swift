@@ -48,24 +48,17 @@ import SwiftUI
 
 
 struct OrganizedEventListView: View {
-    @Binding var organizedEventList: [String]
+    @Binding var organizedEventList: [EventList]
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State private var eventNames: [String:String] = [:]
     
     var body: some View {
-        if organizedEventList == []{
-            Text("You're not Organising any events")
+        if organizedEventList.isEmpty{
+            Text("You've not organized any events")
         } else{
-            List(organizedEventList, id: \.self){ eventId in
-                if let eventName = eventNames[eventId]{
-                    OrganizedEventRow(eventName: eventName)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventNames(eventId: eventId)
-                        }
-                }
+            List(organizedEventList){ event in
+                OrganizedEventRow(eventName: event.name)
             }//End of List
             .navigationTitle("Organized Event List")
         }
@@ -107,6 +100,6 @@ struct OrganizedEventRow: View{
     }
 }
 
-#Preview {
-    OrganizedEventListView(organizedEventList: .constant(["65892817969238ac81d637b6"]))
-}
+//#Preview {
+//    OrganizedEventListView(organizedEventList: .constant(["65892817969238ac81d637b6"]))
+//}

@@ -24,6 +24,8 @@ struct HomeView : View {
     @State private var searchTerm = ""
     @ObservedObject private var eventvm = EventViewModel()
     
+    @State var currentEvent: Events?
+    
     var filteredEvents: [Events] {
         guard !searchTerm.isEmpty else {return events ?? []}
         return events!.filter {$0.name.localizedCaseInsensitiveContains(searchTerm)}
@@ -143,7 +145,6 @@ extension HomeView{
                         
                         ForEach(filteredEvents, id: \.id) { event in
                             if event.isPending == false{
-//                                EventCardView(event: .constant(event))
                                 eventCard(event: event)
                             }
                         }

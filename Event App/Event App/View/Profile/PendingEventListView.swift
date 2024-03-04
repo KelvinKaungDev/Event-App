@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct PendingEventListView: View {
-    @Binding var pendingEventList: [String]
+    @Binding var pendingEventList: [EventList]
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State var eventNames: [String: String] = [:]
     var body: some View {
         
-        if pendingEventList == []{
+        if pendingEventList.isEmpty{
             Text("There's no pending events right now")
         } else {
-            List(pendingEventList, id: \.self){ eventId in
-                if let eventName = eventNames[eventId]{
-                    PendingEventRow(eventName: eventName)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventName(eventId: eventId)
-                        }
-                }
+            List(pendingEventList){ event in
+//                if let eventName = event.name{
+                PendingEventRow(eventName: event.name)
+//                } else{
+//                    ProgressView()
+//                        .onAppear{
+//                            fetchEventName(eventId: eventId)
+//                        }
+//                }
             }
             .navigationTitle("Pending Event List")
 
@@ -71,6 +71,6 @@ struct PendingEventRow: View{
     }
 }
 
-#Preview {
-    PendingEventListView(pendingEventList: .constant(["6589b7eeb1549b810c5a7542"]))
-}
+//#Preview {
+//    PendingEventListView(pendingEventList: .constant(["6589b7eeb1549b810c5a7542"]))
+//}
