@@ -20,43 +20,30 @@ struct OrganisingEventListView: View {
         } else{
             List(organisingEventList){ event in
 //                    OrganisingEventRow(eventName: eventName, eventId: eventId, pendingParticipants: pendingParticipants)
-                OrganisingEventRow(eventName: event.name, eventId: event.id)
-                
+                OrganisingEventRow(eventName: event.name, eventId: event.id, orgId: event.creatorId)
             }//End of List
-            .navigationTitle("Organising Event List")
             
+            .navigationTitle("Organising Event List")
         }
         
     }
     
-    func fetchEventNames(eventId: String){
-        DispatchQueue.main.async {
-            singleEventViewModel.fetchSingleEvent(eventId: eventId) { result in
-                switch result{
-                case .success(let event):
-                    print(event.pendingParticipantList)
-                    self.pendingParticipants = event.pendingParticipantList
-                    self.eventNames[eventId] = event.name
-                case .failure(let error):
-                    print("organising error")
-                    print(error.localizedDescription)
-                    print("-------")
-                }
-            }
-        }
-    }
 }
 
 struct OrganisingEventRow: View{
     
-    var eventName: String
-    var eventId: String
-    @State var pendingParticipants: [String] = []
+    @State var eventName: String
+    @State var eventId: String
+    @State var orgId: String
+    
+    @ObservedObject var vm = EventParticipantViewModel.shared
         
+    @State var pending: [Participant] = []
+    
     var body: some View{
         Section{
             NavigationLink {
-                AllPendingParticipantsView(pendingParticipantData: self.$pendingParticipants)
+                AllPendingParticipantsView(eventId: $eventId, orgId: $orgId, pendingParticipantData: self.$pending)
             } label: {
                 HStack{
                     Image(systemName: "rectangle.3.group.bubble")
@@ -71,6 +58,19 @@ struct OrganisingEventRow: View{
                 .padding()
             }
         }
+        .onAppear(perform: {
+            vm.getEventByOrgId(orgId: orgId, eventId: eventId) { result in
+                switch result{
+                case .success(let participants):
+                    print("organising workkkssssss")
+                    self.pending = participants.pendingParticipantList
+                    print(self.pending)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        })
+        
     }
 }
 

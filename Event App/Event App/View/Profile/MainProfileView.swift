@@ -225,21 +225,13 @@ struct MainProfileView: View {
                 storedUserId = userId
                 getEventsByUserIdVM.fetchEventsByUserId(userId: userId) { result in
                     switch result{
-                    case .success(let event):
-                        print("----")
-                        
+                    case .success(let event):                        
                         self.organizedEventList = event.organizedEventList ?? []
                         self.organisingEventList = event.organisingEventList ?? []
                         self.participatedEventList = event.participatedEventList ?? []
                         self.participatingEventList = event.participatingEventList ?? []
                         self.pendingEventList = event.pendingEventList ?? []
                         self.createdEventList = event.createdEventList ?? []
-                        
-                        print(event.createdEventList ?? "No created Event")
-                        print(event.organisingEventList ?? "No Organising Event")
-                        
-                        print(event.organisingEventList?.first ?? "No first")
-                        
                         
                     case .failure(let error):
                         print(error.localizedDescription)

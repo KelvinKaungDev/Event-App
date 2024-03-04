@@ -78,6 +78,10 @@
 		BCAF44702B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF446F2B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift */; };
 		BCAF44722B95947900C2E569 /* TestEventFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44712B95947900C2E569 /* TestEventFetch.swift */; };
 		BCAF44742B95C95700C2E569 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44732B95C95700C2E569 /* CardView.swift */; };
+		BCAF44762B9611AD00C2E569 /* EventParticipantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44752B9611AD00C2E569 /* EventParticipantModel.swift */; };
+		BCAF44782B96145100C2E569 /* EventParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44772B96145100C2E569 /* EventParticipantViewModel.swift */; };
+		BCAF447A2B96154C00C2E569 /* TestParticipant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44792B96154C00C2E569 /* TestParticipant.swift */; };
+		BCAF447E2B96320B00C2E569 /* OrgAcceptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF447D2B96320B00C2E569 /* OrgAcceptViewModel.swift */; };
 		BCB4B3192B5E3E2C00697BEC /* BaseTabHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B3182B5E3E2C00697BEC /* BaseTabHomeView.swift */; };
 		BCB4B31B2B5E3E4400697BEC /* HostEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31A2B5E3E4400697BEC /* HostEventView.swift */; };
 		BCB4B31D2B5E3E5E00697BEC /* FillEventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */; };
@@ -164,6 +168,10 @@
 		BCAF446F2B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsByUserIdViewModel.swift; sourceTree = "<group>"; };
 		BCAF44712B95947900C2E569 /* TestEventFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEventFetch.swift; sourceTree = "<group>"; };
 		BCAF44732B95C95700C2E569 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BCAF44752B9611AD00C2E569 /* EventParticipantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantModel.swift; sourceTree = "<group>"; };
+		BCAF44772B96145100C2E569 /* EventParticipantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantViewModel.swift; sourceTree = "<group>"; };
+		BCAF44792B96154C00C2E569 /* TestParticipant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestParticipant.swift; sourceTree = "<group>"; };
+		BCAF447D2B96320B00C2E569 /* OrgAcceptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrgAcceptViewModel.swift; sourceTree = "<group>"; };
 		BCB4B3182B5E3E2C00697BEC /* BaseTabHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabHomeView.swift; sourceTree = "<group>"; };
 		BCB4B31A2B5E3E4400697BEC /* HostEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostEventView.swift; sourceTree = "<group>"; };
 		BCB4B31C2B5E3E5E00697BEC /* FillEventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillEventDetailView.swift; sourceTree = "<group>"; };
@@ -283,6 +291,8 @@
 				B33DEEFB2B6EAF6000303BC7 /* HostEventViewModel.swift */,
 				BCBAC1142B7BD75A00FAF04C /* UserJoinEventViewModel.swift */,
 				BCAF446F2B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift */,
+				BCAF44772B96145100C2E569 /* EventParticipantViewModel.swift */,
+				BCAF447D2B96320B00C2E569 /* OrgAcceptViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -309,6 +319,7 @@
 				B33DEEFD2B6F7F0F00303BC7 /* CreateEventModel.swift */,
 				BC463EA32B85129500795FCF /* SingleEventModel.swift */,
 				BCAF446D2B9589CF00C2E569 /* GetAllEventsByUserIdModel.swift */,
+				BCAF44752B9611AD00C2E569 /* EventParticipantModel.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -434,6 +445,7 @@
 				B30620DA2B7E73760004A4D6 /* ParticipatedEventListView.swift */,
 				B30620D62B7E72F00004A4D6 /* PendingEventListView.swift */,
 				B3CACA412B73362C006B3B70 /* CreatedEventListView.swift */,
+				BCAF44792B96154C00C2E569 /* TestParticipant.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -598,6 +610,7 @@
 				B37B38542B5A5244002404A1 /* RegistrationView.swift in Sources */,
 				393F38372B591641008CCC40 /* ContentView.swift in Sources */,
 				BCBAC1152B7BD75A00FAF04C /* UserJoinEventViewModel.swift in Sources */,
+				BCAF447A2B96154C00C2E569 /* TestParticipant.swift in Sources */,
 				B33DEEFE2B6F7F0F00303BC7 /* CreateEventModel.swift in Sources */,
 				393F387C2B59189B008CCC40 /* UserPopulateModel.swift in Sources */,
 				B7AF3F792B5E1D930017E213 /* EventDetailsView.swift in Sources */,
@@ -636,6 +649,7 @@
 				B30620DB2B7E73760004A4D6 /* ParticipatedEventListView.swift in Sources */,
 				B3CACA422B73362C006B3B70 /* CreatedEventListView.swift in Sources */,
 				393F387B2B59189B008CCC40 /* UserModel.swift in Sources */,
+				BCAF44782B96145100C2E569 /* EventParticipantViewModel.swift in Sources */,
 				B30620D72B7E72F00004A4D6 /* PendingEventListView.swift in Sources */,
 				B37B38442B5A4B85002404A1 /* GoogleSignInViewModel.swift in Sources */,
 				393F38842B59189B008CCC40 /* UserPopulateUnitModel.swift in Sources */,
@@ -643,6 +657,8 @@
 				393F38812B59189B008CCC40 /* EventModel.swift in Sources */,
 				393F38352B591641008CCC40 /* Event_AppApp.swift in Sources */,
 				BC8EA5162B85F4AB000F81F4 /* ParticipatingEventListView.swift in Sources */,
+				BCAF44762B9611AD00C2E569 /* EventParticipantModel.swift in Sources */,
+				BCAF447E2B96320B00C2E569 /* OrgAcceptViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
