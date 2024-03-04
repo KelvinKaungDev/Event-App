@@ -23,17 +23,22 @@ struct MainProfileView: View {
     @State var eventData: Events = Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: "", startTime: "", endTime:" Date.now", location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: true, isRejected: false, isSuspended: false, isCancelled: false, pendingParticipantList: ["658927ee969238ac81d637af"], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)
     
     @ObservedObject var userViewModel = UserViewModel.shared
+    @ObservedObject var getEventsByUserIdVM = GetAllEventsByUserIdViewModel.shared
+    
     @State var username: String = ""
     @State private var isSignedOut: Bool = false
     
     @State private var storedUserId: String = ""
-    @State private var organizedEventList: [String] = []
-    @State private var organisingEventList: [String] = []
-    @State private var participatedEventList: [String] = []
-    @State private var participatingEventList: [String] = []
-    @State private var pendingEventList: [String] = []
-    @State private var createdEventList: [String] = []
+    @State private var organizedEventList: [EventList] = []
+    @State private var organisingEventList: [EventList] = []
+    @State private var participatedEventList: [EventList] = []
+    @State private var participatingEventList: [EventList] = []
+    @State private var pendingEventList: [EventList] = []
+    @State private var createdEventList: [EventList] = []
 
+    @State private var events: [Events] = []
+    @State var anyData = []
+    
 
     var body: some View {
         NavigationStack{
@@ -71,6 +76,7 @@ struct MainProfileView: View {
                     .fill(Color("grey_background"))
                 }.ignoresSafeArea()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
                 
                 VStack(alignment: .center){
                     if let photoURL = Auth.auth().currentUser?.photoURL {
@@ -214,39 +220,46 @@ struct MainProfileView: View {
             })
         }
         .onAppear{
-//            userViewModel.fetchSingleUser(userId: "658927ee969238ac81d637af") { result in
-//                switch result{
-//                case .success(let user):
-//                    self.organizedEventList = user.organizedEventList ?? []
-//                    self.organisingEventList = user.organisingEventList ?? []
-//                    self.participatedEventList = user.participatedEventList ?? []
-//                    self.participatingEventList = user.participatingEventList ?? []
-//                    self.pendingEventList = user.pendingEventList ?? []
-//                    self.createdEventList = user.createdEventList ?? []
-//                    
-//                    
-//                case .failure(let error):
-//                    print(error.localizedDescription)
-//                }
-//            }
-            
+            print(Auth.auth().currentUser?.uid ?? "")
             if let userId = UserDefaults.standard.string(forKey: "UserID") {
                 storedUserId = userId
-                userViewModel.fetchSingleUser(userId: storedUserId) { result in
+                getEventsByUserIdVM.fetchEventsByUserId(userId: userId) { result in
                     switch result{
-                    case .success(let user):
-                        self.organizedEventList = user.organizedEventList ?? []
-                        self.organisingEventList = user.organisingEventList ?? []
-                        self.participatedEventList = user.participatedEventList ?? []
-                        self.participatingEventList = user.participatingEventList ?? []
-                        self.pendingEventList = user.pendingEventList ?? []
-                        self.createdEventList = user.createdEventList ?? []
+                    case .success(let event):
+                        print("----")
+                        
+                        self.organizedEventList = event.organizedEventList ?? []
+                        self.organisingEventList = event.organisingEventList ?? []
+                        self.participatedEventList = event.participatedEventList ?? []
+                        self.participatingEventList = event.participatingEventList ?? []
+                        self.pendingEventList = event.pendingEventList ?? []
+                        self.createdEventList = event.createdEventList ?? []
+                        
+                        print(event.createdEventList ?? "No created Event")
+                        print(event.organisingEventList ?? "No Organising Event")
+                        
+                        print(event.organisingEventList?.first ?? "No first")
                         
                         
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
                 }
+//                userViewModel.fetchSingleUser(userId: storedUserId) { result in
+//                    switch result{
+//                    case .success(let user):
+//                        self.organizedEventList = user.organizedEventList ?? []
+//                        self.organisingEventList = user.organisingEventList ?? []
+//                        self.participatedEventList = user.participatedEventList ?? []
+//                        self.participatingEventList = user.participatingEventList ?? []
+//                        self.pendingEventList = user.pendingEventList ?? []
+//                        self.createdEventList = user.createdEventList ?? []
+//                        
+//                        
+//                    case .failure(let error):
+//                        print(error.localizedDescription)
+//                    }
+//                }
             }
         }
 

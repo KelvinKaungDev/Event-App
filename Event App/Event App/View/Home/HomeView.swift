@@ -24,10 +24,16 @@ struct HomeView : View {
     @State private var searchTerm = ""
     @ObservedObject private var eventvm = EventViewModel()
     
+    @State var currentEvent: Events?
+    
     var filteredEvents: [Events] {
         guard !searchTerm.isEmpty else {return events ?? []}
         return events!.filter {$0.name.localizedCaseInsensitiveContains(searchTerm)}
     }
+    var nonPendingEvents: [Events] {
+        filteredEvents.filter { !$0.isPending }
+    }
+
     
     
     init(){
@@ -62,6 +68,8 @@ struct HomeView : View {
                 
                 allEventsView
                     .zIndex(0)
+                
+                    
                                     
             }//end of ZStack
             .toolbar{
@@ -95,6 +103,22 @@ struct HomeView : View {
                 
             }
 
+
+
+            .navigationDestination(for: String.self) { value in
+                if let selectedEvent = events?.first(where: { $0.id == value }) {
+                    EventDetailsView(event: .constant(selectedEvent), path: $navPath)
+                }
+                if value.starts(with: "registerEvent-") {
+                        let eventId = value.replacingOccurrences(of: "registerEvent-", with: "")
+                        if let selectedEvent = events?.first(where: { $0.id == eventId }) {
+                            RegisterEventView(path: $navPath, event: selectedEvent)
+                        }
+                    }
+                if value == "success"{
+                    RegisteredSuccessView(path: $navPath)
+                }
+            }
             .navigationBarBackButtonHidden()
 
         }
@@ -140,12 +164,12 @@ extension HomeView{
                         .foregroundStyle(.white)
                 } else{
                     LazyVGrid(columns: columns, spacing: 120) {
-                        
-                        ForEach(filteredEvents, id: \.id) { event in
-                            if event.isPending == false{
-//                                EventCardView(event: .constant(event))
-                                eventCard(event: event)
-                            }
+                        ForEach(nonPendingEvents.indices, id: \.self) { index in
+//                            if event.isPending == false{
+//                                eventCard(event: event)
+//                            }
+                            let event = nonPendingEvents[index]
+                            eventCard(event: event)
                         }
                     }
                 }
@@ -178,7 +202,7 @@ extension HomeView{
 extension HomeView{
     @ViewBuilder
     func eventCard(event: Events) -> some View{
-        NavigationLink(value: "event", label: {
+        NavigationLink(value: event.id, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(.white)
@@ -220,17 +244,8 @@ extension HomeView{
             .frame(width: 165, height: 200)
         })
 
-        .navigationDestination(for: String.self) { value in
-            if value == "event"{
-                EventDetailsView(event: .constant(event), path: $navPath)
-            }
-            if value == "register"{
-                RegisterEventView(event: .constant(event), path: $navPath)
-            }
-            if value == "success"{
-                RegisteredSuccessView(path: $navPath)
-            }
-        }
+        
+        
     }
 }
 

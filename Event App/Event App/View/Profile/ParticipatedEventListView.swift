@@ -1,88 +1,25 @@
-////
-////  ParticipatedEventListView.swift
-////  Event App
-////
-////  Created by Akito Daiki on 15/2/2567 BE.
-////
 //
+//  ParticipatedEventListView.swift
+//  Event App
+//
+//  Created by Akito Daiki on 15/2/2567 BE.
+//
+
 import SwiftUI
-//
-//struct ParticipatedEventListView: View {
-//    @ObservedObject var viewModel = UserViewModel.shared
-//    @ObservedObject var eventsViewModel = EventViewModel()
-//    @State private var storedUserId: String = ""
-//    @State var participatedEventList: [Events] = []
-//    
-//    var body: some View {
-//        
-//        
-//        ScrollView(.horizontal,showsIndicators: false){
-//            HStack(spacing:15){
-//                ForEach(participatedEventList, id:\.id) { event in
-//                    EventCardView(event: .constant(event))
-//                }
-//            }
-//        }
-//        
-//        
-//        
-//        
-//        
-////        List(participatedEventList, id: \.id) { event in
-////            VStack(alignment: .leading) {
-////                Text(event.name)
-////                    .font(.headline)
-////                Text(event.description)
-////                    .font(.subheadline)
-////            }
-////        }
-//        .onAppear {
-//            if let userId = UserDefaults.standard.string(forKey: "UserID"){
-//                storedUserId = userId
-//                //                    DispatchQueue.main.async {
-//                //                        eventsViewModel.loadEvents(userId: userId)
-//                viewModel.fetchUserPopulateEventList(userId: userId) { result in
-//                    DispatchQueue.main.async {
-//                        switch result {
-//                        case .success(let populateEventList):
-//                            self.participatedEventList = populateEventList.participatedEventList ?? []
-//                        case .failure(let error):
-//                            print("participated error")
-//                            print(error)
-//                        }
-//                    }
-//                }
-//                //                    }
-//            } else {
-//                print("Error gg HAS")
-//            }
-//        }
-//    }
-//}
-//
-//#Preview {
-//    ParticipatedEventListView()
-//}
 
 struct ParticipatedEventListView: View {
-    @Binding var participatedEventList: [String]
+    @Binding var participatedEventList: [EventList]
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State private var eventNames: [String: String] = [:]
     
     var body: some View {
-        if participatedEventList == []{
+        if participatedEventList.isEmpty{
             Text("You haven't participated in any events")
         } else {
-            List(participatedEventList, id: \.self){ eventId in
-                if let eventName = eventNames[eventId]{
-                    ParticipatedEventRow(eventName: eventName)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventName(eventId: eventId)
-                        }
-                }
+            List(participatedEventList){ event in
+                ParticipatedEventRow(eventName: event.name)
+
             }.navigationTitle("Participated Event List")
         }
         
@@ -126,6 +63,6 @@ struct ParticipatedEventRow: View{
 }
 
 
-#Preview {
-    ParticipatedEventListView(participatedEventList: .constant(["6589b7eeb1549b810c5a7542"]))
-}
+//#Preview {
+//    ParticipatedEventListView(participatedEventList: .constant(["6589b7eeb1549b810c5a7542"]))
+//}

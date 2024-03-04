@@ -8,25 +8,19 @@
 import SwiftUI
 
 struct ParticipatingEventListView: View {
-    @Binding var participatingEventList: [String]
+    @Binding var participatingEventList: [EventList]
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State var eventNames: [String: String] = [:]
     
     var body: some View {
-        if participatingEventList == [] {
+        if participatingEventList.isEmpty{
             Text("You are not participating in any events")
         }
         else {
-            List(participatingEventList, id: \.self) {eventId in
-                if let eventName = eventNames[eventId]{
-                    ParticipatingEventRow(eventName: eventName)
-                } else{
-                    ProgressView()
-                        .onAppear{
-                            fetchEventNames(eventId: eventId)
-                        }
-                }
+            List(participatingEventList) {event in
+                ParticipatingEventRow(eventName: event.name)
+                
             }
             .navigationTitle("Participating Event List")
             
@@ -66,6 +60,6 @@ struct ParticipatingEventRow: View{
     }
 }
 
-#Preview {
-    ParticipatingEventListView(participatingEventList: .constant([""]))
-}
+//#Preview {
+//    ParticipatingEventListView(participatingEventList: .constant([""]))
+//}

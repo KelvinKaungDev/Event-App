@@ -32,7 +32,9 @@ struct AllPendingParticipantsView: View {
             }
             
         } // End of list
-        
+        .onAppear(perform: {
+            print(pendingParticipantData)
+        })
         .navigationTitle("Pending participants")
         
     }
