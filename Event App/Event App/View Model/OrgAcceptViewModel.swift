@@ -21,7 +21,7 @@ class OrgAcceptViewModel: ObservableObject{
         AF.request(url, method: .put, parameters: parameters, encoding: JSONEncoding.default).response { response in
             switch response.result{
             case .success(_):
-                print("Accepted")
+                print("Participant Accepted")
             case .failure(let error):
                 print(error.localizedDescription)
             }

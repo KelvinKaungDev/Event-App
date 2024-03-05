@@ -76,7 +76,6 @@
 		BC8EA5162B85F4AB000F81F4 /* ParticipatingEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EA5152B85F4AB000F81F4 /* ParticipatingEventListView.swift */; };
 		BCAF446E2B9589CF00C2E569 /* GetAllEventsByUserIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF446D2B9589CF00C2E569 /* GetAllEventsByUserIdModel.swift */; };
 		BCAF44702B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF446F2B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift */; };
-		BCAF44722B95947900C2E569 /* TestEventFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44712B95947900C2E569 /* TestEventFetch.swift */; };
 		BCAF44742B95C95700C2E569 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44732B95C95700C2E569 /* CardView.swift */; };
 		BCAF44762B9611AD00C2E569 /* EventParticipantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44752B9611AD00C2E569 /* EventParticipantModel.swift */; };
 		BCAF44782B96145100C2E569 /* EventParticipantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAF44772B96145100C2E569 /* EventParticipantViewModel.swift */; };
@@ -166,7 +165,6 @@
 		BC8EA5152B85F4AB000F81F4 /* ParticipatingEventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatingEventListView.swift; sourceTree = "<group>"; };
 		BCAF446D2B9589CF00C2E569 /* GetAllEventsByUserIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsByUserIdModel.swift; sourceTree = "<group>"; };
 		BCAF446F2B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllEventsByUserIdViewModel.swift; sourceTree = "<group>"; };
-		BCAF44712B95947900C2E569 /* TestEventFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestEventFetch.swift; sourceTree = "<group>"; };
 		BCAF44732B95C95700C2E569 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		BCAF44752B9611AD00C2E569 /* EventParticipantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantModel.swift; sourceTree = "<group>"; };
 		BCAF44772B96145100C2E569 /* EventParticipantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventParticipantViewModel.swift; sourceTree = "<group>"; };
@@ -437,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				BC463E9F2B84F89B00795FCF /* MainProfileView.swift */,
-				BCAF44712B95947900C2E569 /* TestEventFetch.swift */,
 				B30620D42B7E72AE0004A4D6 /* OrganizedEventListView.swift */,
 				BC463EA12B85105000795FCF /* OrganisingEventListView.swift */,
 				B7350ADD2B83110F007BA6CE /* AllPendingParticipantsView.swift */,
@@ -623,7 +620,6 @@
 				393F38822B59189B008CCC40 /* UnitModel.swift in Sources */,
 				BCB4B31B2B5E3E4400697BEC /* HostEventView.swift in Sources */,
 				BC463EA22B85105000795FCF /* OrganisingEventListView.swift in Sources */,
-				BCAF44722B95947900C2E569 /* TestEventFetch.swift in Sources */,
 				393F38792B59189B008CCC40 /* SingleUnitModel.swift in Sources */,
 				BCB4B3212B5E3EAB00697BEC /* OnboardingView.swift in Sources */,
 				BCAF44702B958AD000C2E569 /* GetAllEventsByUserIdViewModel.swift in Sources */,
@@ -824,10 +820,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Event App/Preview Content\"";
-				DEVELOPMENT_TEAM = 27KRXYPLFN;
+				DEVELOPMENT_TEAM = A89P8LLWX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Event-App-Info.plist";
@@ -843,6 +840,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kelvingao.Event-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -854,10 +852,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Event App/Preview Content\"";
-				DEVELOPMENT_TEAM = 27KRXYPLFN;
+				DEVELOPMENT_TEAM = A89P8LLWX2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Event-App-Info.plist";
@@ -873,6 +872,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kelvingao.Event-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

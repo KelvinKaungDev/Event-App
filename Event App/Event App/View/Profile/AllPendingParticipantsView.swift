@@ -22,7 +22,9 @@ struct AllPendingParticipantsView: View {
     
     var body: some View {
         if pendingParticipantData.isEmpty{
-            Text("There's no pending participants right now.")
+            VStack{
+                Text("There's no pending participants right now.")
+            }
         }
         List{
             ForEach(pendingParticipantData, id: \.id){participant in
