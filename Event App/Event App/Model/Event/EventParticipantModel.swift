@@ -68,8 +68,8 @@ struct EventParticipant: Decodable {
     let isRejected: Bool
     let isSuspended: Bool
     let isCancelled: Bool
-    let pendingParticipantList: [Participant]
-    let participantList: [String]
+    let pendingParticipantList: [Participant]?
+    let participantList: [Participant]?
     let organizerList: [Participant]
     let creatorId: String
     let createdAt: String

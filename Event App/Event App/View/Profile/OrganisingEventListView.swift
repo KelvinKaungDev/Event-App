@@ -9,7 +9,6 @@ import SwiftUI
 
 struct OrganisingEventListView: View {
     @Binding var organisingEventList: [EventList]
-    @State var pendingParticipants: [String] = []
     @ObservedObject var singleEventViewModel = EventViewModel()
     
     @State private var eventNames: [String:String] = [:]
@@ -19,9 +18,8 @@ struct OrganisingEventListView: View {
             Text("You're not Organising any events")
         } else{
             List(organisingEventList){ event in
-//                    OrganisingEventRow(eventName: eventName, eventId: eventId, pendingParticipants: pendingParticipants)
                 OrganisingEventRow(eventName: event.name, eventId: event.id, orgId: event.creatorId)
-            }//End of List
+            }
             
             .navigationTitle("Organising Event List")
         }
@@ -62,9 +60,7 @@ struct OrganisingEventRow: View{
             vm.getEventByOrgId(orgId: orgId, eventId: eventId) { result in
                 switch result{
                 case .success(let participants):
-                    print("organising workkkssssss")
-                    self.pending = participants.pendingParticipantList
-                    print(self.pending)
+                    self.pending = participants.pendingParticipantList ?? []
                 case .failure(let error):
                     print(error.localizedDescription)
                 }

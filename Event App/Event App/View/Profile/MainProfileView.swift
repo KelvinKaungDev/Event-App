@@ -168,7 +168,6 @@ struct MainProfileView: View {
                         
                     case .ptingEventList:
                         ParticipatingEventListView(participatingEventList: self.$participatingEventList)
-//                        ParticipatingEventListView(participatingEventList: self.$participatingEventList)
                         
                     case .organizedEventList:
                         OrganizedEventListView(organizedEventList: self.$organizedEventList)
