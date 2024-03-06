@@ -8,6 +8,9 @@
 import SwiftUI
 import PhotosUI
 
+enum NavigationTarget: Hashable {
+    case nextScreen
+}
 struct FillEventDetailView: View {
 //    @State private var avatarItem: PhotosPickerItem?
 //    @State private var avatarImage: Image?
@@ -29,6 +32,9 @@ struct FillEventDetailView: View {
     @State private var errorMessage: String?
     @ObservedObject var viewModel = UnitViewModel()
     @ObservedObject var hostEventViewModel = HostEventViewModel()
+    
+    @Binding var path: [String]
+    @State private var navigationTarget: NavigationTarget?
     
             
     var limitRange: ClosedRange<Date>{
@@ -157,49 +163,34 @@ struct FillEventDetailView: View {
                             Spacer()
                         }.padding()
                     }.frame(width: 300, height: 130)
+                
+                Button(action: {
+                    // Host event action here
                     
-                NavigationLink(destination: PendingEventView(), isActive: $shouldNavigate) {
-                    Button {
-                        // add action here
-                        
-                        let dateFormatter = DateFormatter()
-                        dateFormatter.dateFormat = "dd-MM-yyyy-HH:mm"
-                        let timeFormatter = DateFormatter()
-                        timeFormatter.dateFormat = "HH:mm"
-                        let startDateStr = dateFormatter.string(from: startDate) + "T" + timeFormatter.string(from: startTime)
-                        let endDateStr = dateFormatter.string(from: endDate) + "T" + timeFormatter.string(from: endTime)
-                        
-                        print(eventTitle, venue, participants, dateFormatter.string(from: startDate), dateFormatter.string(from: endDate),timeFormatter.string(from: startTime),timeFormatter.string(from: endTime),desc)
-                        // post the created event
-                        guard let userId = UserDefaults.standard.string(forKey: "UserID") else {return}
-                        let eventData = postEventData(name: eventTitle, units: selectedUnitId, location: venue, date: startDateStr, startTime: startDateStr, endTime: endDateStr, description: desc, creatorId: userId, organizerList: userId)
-                        hostEventViewModel.hostEvent(eventData: eventData) { success in
-                            if success {
-                                print("Event successfully hosted")
-                                self.shouldNavigate = true
-                            } else {
-                                print("Failed to host event: \(errorMessage ?? "Unknown error")")
-                            }
-                        }
-                        self.shouldNavigate.toggle()
-                    } label: {
-                        RoundedRectangle(cornerRadius: 50)
-                            .fill(
-                                LinearGradient(
-                                    colors: [Color("red_primary"),
-                                             Color("red_secondary")],
-                                    startPoint: .top,
-                                    endPoint: .bottom)
-                            )
-                            .frame(width: 300, height: 50)
-                            .overlay(
-                                Text("Host an Event")
-                                    .foregroundColor(.white)
-                                , alignment: .center
-                            )
+                    hostEventButtonAction()
+                    shouldNavigate.toggle()
+                }, label: {
+                    RoundedRectangle(cornerRadius: 50)
+                        .fill(
+                            LinearGradient(
+                                colors: [Color("red_primary"),
+                                         Color("red_secondary")],
+                                startPoint: .top,
+                                endPoint: .bottom)
+                        )
+                        .frame(width: 300, height: 50)
+                        .overlay(
+                            Text("Host an Event")
+                                .foregroundColor(.white)
+                            , alignment: .center
+                        )
+                })
+                .alert("Click ok to host the event", isPresented: $shouldNavigate) {
+                    Text("Cancel")
+                    NavigationLink(value: "GoToPendingEventView") {
+                        Text("OK")
                     }
                 }
-//                NavigationLink(destination: PendingEventView(), label: <#T##() -> Label#>)
             }
             .padding()
             .navigationTitle("Fill Event Details")
@@ -217,11 +208,34 @@ struct FillEventDetailView: View {
             }
         })
     }
+    
+    
+    private func hostEventButtonAction(){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy-HH:mm"
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        let startDateStr = dateFormatter.string(from: startDate) + "T" + timeFormatter.string(from: startTime)
+        let endDateStr = dateFormatter.string(from: endDate) + "T" + timeFormatter.string(from: endTime)
+        
+        print(eventTitle, venue, participants, dateFormatter.string(from: startDate), dateFormatter.string(from: endDate),timeFormatter.string(from: startTime),timeFormatter.string(from: endTime),desc)
+        // post the created event
+        guard let userId = UserDefaults.standard.string(forKey: "UserID") else {return}
+        let eventData = postEventData(name: eventTitle, units: selectedUnitId, location: venue, date: startDateStr, startTime: startDateStr, endTime: endDateStr, description: desc, creatorId: userId, organizerList: userId)
+        hostEventViewModel.hostEvent(eventData: eventData) { success in
+            if success {
+                print("Event successfully hosted")
+                self.shouldNavigate = true
+            } else {
+                print("Failed to host event: \(errorMessage ?? "Unknown error")")
+            }
+        }
+    }
 }
 
 
 
-#Preview {
-    FillEventDetailView()
-}
+//#Preview {
+//    FillEventDetailView()
+//}
 

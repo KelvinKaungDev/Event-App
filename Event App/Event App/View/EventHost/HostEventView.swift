@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HostEventView: View {
+    
+    @State private var navPath: [String] = []
+    
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navPath) {
             VStack{
                 Image("event_host")
                     .resizable()
@@ -43,7 +46,10 @@ struct HostEventView: View {
             
             .navigationDestination(for: String.self) { value in
                 if value == "fillEventDetail"{
-                    FillEventDetailView()
+                    FillEventDetailView(path: $navPath)
+                }
+                if value == "GoToPendingEventView"{
+                    PendingEventView(path: $navPath)
                 }
             }
         }

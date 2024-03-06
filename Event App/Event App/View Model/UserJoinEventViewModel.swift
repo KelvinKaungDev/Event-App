@@ -25,7 +25,7 @@ class UserJoinEventViewModel: Observable{
         let session = URLSession.shared
         let task = session.dataTask(with: request){ data, _, error in
             if let error = error {
-                print("Error: \(error)")
+                print("Error: \(error.localizedDescription)")
             } else if let data = data {
                 if let responseString = String(data: data, encoding: .utf8) {
                     DispatchQueue.main.async {

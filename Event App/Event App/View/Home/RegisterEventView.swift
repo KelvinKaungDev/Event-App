@@ -55,7 +55,13 @@ struct RegisterEventView: View {
             }
             showAlert.toggle()
         }, label: {
-            Text("Register Event")
+            RoundedRectangle(cornerRadius: 10)
+                .frame(width: 150, height: 35)
+                .foregroundStyle(.blue)
+                .overlay {
+                    Text("Register Event")
+                        .foregroundStyle(.white)
+                }
         })
         .alert("Event Registration Success", isPresented: $showAlert) {
             NavigationLink(value: "success") {
@@ -71,5 +77,6 @@ struct RegisterEventView: View {
 
 //#Preview {
 //    RegisterEventView(event: .constant(Events(id: "abcd", name: "Music Festival", description: "Coding Club", units: ["658927e6969238ac81d637ad"], date: "", startTime: "", endTime:" Date.now", location: "VMS", rules: [], comments: [], isPending: false, isCompleted: false, isApproved: false, isRejected: true, isSuspended: false, isCancelled: false, pendingParticipantList: [], participantList: [], organizerList: ["658927ee969238ac81d637af"], creatorID: "658927ee969238ac81d637af", createdAt: "", updatedAt: "", v: 0)))
+    
 //}
-//
+
