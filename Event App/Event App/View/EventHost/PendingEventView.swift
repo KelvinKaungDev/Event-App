@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PendingEventView: View {
+    
+    @Binding var path: [String]
+    
     var body: some View {
         VStack{
             Image("event_host")
@@ -21,7 +24,26 @@ struct PendingEventView: View {
                 .font(.system(size: 12))
                 .padding()
                 .foregroundColor(Color("text_color_grey"))
-            NavigationLink(destination: BaseTabHomeView()) {
+//            NavigationLink(destination: BaseTabHomeView()) {
+//                RoundedRectangle(cornerRadius: 50)
+//                    .fill(
+//                        LinearGradient(
+//                            colors: [Color("red_primary"),
+//                                     Color("red_secondary")],
+//                            startPoint: .top,
+//                            endPoint: .bottom)
+//                    )
+//                    .frame(width: 300, height: 50)
+//                    .overlay(
+//                        Text("Main Menu")
+//                            .foregroundColor(.white)
+//                        , alignment: .center
+//                    )
+//            }
+            
+            Button {
+                path.removeAll()
+            } label: {
                 RoundedRectangle(cornerRadius: 50)
                     .fill(
                         LinearGradient(
@@ -37,6 +59,8 @@ struct PendingEventView: View {
                         , alignment: .center
                     )
             }
+
+            
             
 
         }
@@ -46,5 +70,5 @@ struct PendingEventView: View {
 }
 
 #Preview {
-    PendingEventView()
+    PendingEventView(path: .constant([]))
 }

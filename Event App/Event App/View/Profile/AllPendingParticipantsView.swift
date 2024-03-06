@@ -54,9 +54,6 @@ struct AllPendingParticipantsView: View {
                 Text(username)
                     .fontWeight(.semibold)
                     .font(.system(size:15))
-                Text("Description")
-                    .font(.body)
-                    .opacity(0.5)
                 HStack(alignment:.center){
                     
                     Button(action: {

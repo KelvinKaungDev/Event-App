@@ -92,11 +92,12 @@ struct HomeView : View {
             .navigationBarBackButtonHidden()
 
         }
-        .onAppear(perform: {
-            // Fetch event data
-            isLoading = true
-            fetchEventData()
-        })
+//        .onAppear(perform: {
+//            // Fetch event data
+////            isLoading = true
+//            await fetchEventData()
+//        })
+        
         .task {
             // Get user data
             if let userId = UserDefaults.standard.string(forKey: "UserID"){
@@ -127,18 +128,24 @@ extension HomeView{
     private var allEventsView: some View{
         ScrollView(.vertical,showsIndicators: false) {
             ZStack{
-                if isLoading {
-                    ProgressView("Loading...")
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .tint(.white)
-                        .padding()
-                        .foregroundStyle(.white)
-                } else{
-                    LazyVGrid(columns: columns, spacing: 120) {
-                        ForEach(nonPendingEvents.indices, id: \.self) { index in
-                            let event = nonPendingEvents[index]
-                            eventCard(event: event)
-                        }
+//                if isLoading {
+//                    ProgressView("Loading...")
+//                        .progressViewStyle(CircularProgressViewStyle())
+//                        .tint(.white)
+//                        .padding()
+//                        .foregroundStyle(.white)
+//                } else{
+//                    LazyVGrid(columns: columns, spacing: 120) {
+//                        ForEach(nonPendingEvents.indices, id: \.self) { index in
+//                            let event = nonPendingEvents[index]
+//                            eventCard(event: event)
+//                        }
+//                    }
+//                }
+                LazyVGrid(columns: columns, spacing: 120) {
+                    ForEach(nonPendingEvents.indices, id: \.self) { index in
+                        let event = nonPendingEvents[index]
+                        eventCard(event: event)
                     }
                 }
                 
@@ -148,10 +155,13 @@ extension HomeView{
             
         }
         .searchable(text: $searchTerm, placement: .navigationBarDrawer, prompt: "Search Events")
+        .refreshable {
+            await fetchEventData()
+        }
 
     }
     
-    func fetchEventData(){
+    func fetchEventData() async {
         eventvm.fetchEvents { result in
             isLoading = false
             switch result{
