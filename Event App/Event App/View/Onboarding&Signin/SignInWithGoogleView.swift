@@ -57,24 +57,10 @@ struct SignInWithGoogleView: View {
             Button{
                 signInWithGoogle()
             }label: {
-                ZStack{
-                    Rectangle()
-                        .foregroundColor(.white)
-                        .cornerRadius(30)
-                        .shadow(color: .shadow, radius: 6, x: 0, y: 6)
-                        .frame(maxWidth: 350, maxHeight: 60)
-                        .padding()
-                    HStack{
-                        Image("google")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 50, maxHeight: 50)
-                        Text("Sign In with Google")
-                            .tint(Color.black)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                    }
-                }
+                Image("ios_light_sq_SI")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250)
             }
             if let errorMessage = errorMessage {
                 Text(errorMessage)
@@ -111,8 +97,8 @@ struct SignInWithGoogleView: View {
 //    @State private var isLoggedIn = false
 //    @State private var shouldNavigateToHome = false
 //    @State private var shouldNavigateToRegistration = false
-////    @AppStorage("signIn") var isSignIn = false
-//    
+    ////@AppStorage("signIn") var isSignIn = false
+//
 //    var body: some View {
 //        NavigationStack {
 //            VStack {
